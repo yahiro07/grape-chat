@@ -1,6 +1,9 @@
 {
   "version": "2",
   "remote": {
+    "https://cdn.jsdelivr.net/gh/yahiro07/resin-css/mod.ts": "017c6dfba626759c90f9c68ebc02b1af5fe8b95a957d7f11dfccc26497cc623b",
+    "https://cdn.jsdelivr.net/gh/yahiro07/resin-css/src/resin_css.ts": "839cd2778a8da6463ee4d13a6acaa2e6475999399d4ea840add200fa9bfd1ae8",
+    "https://cdn.jsdelivr.net/gh/yahiro07/resin-css/src/resin_css_core.ts": "f09f6ac1d4d62e3b7db43e219109357e54ea1708553ce0b6d1f5413ca2fe42c2",
     "https://deno.land/std@0.140.0/_util/assert.ts": "e94f2eb37cebd7f199952e242c77654e43333c1ac4c5c700e929ea3aa5489f74",
     "https://deno.land/std@0.140.0/_util/os.ts": "3b4c6e27febd119d36a416d7a97bd3b0251b77c88942c8f16ee5953ea13e2e49",
     "https://deno.land/std@0.140.0/fs/_util.ts": "0fb24eb4bfebc2c194fb1afdb42b9c3dda12e368f43e8f2321f84fc77d42cb0f",
