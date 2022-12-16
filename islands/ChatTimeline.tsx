@@ -17,7 +17,8 @@ export default function ChatTimeline({
     css`
       border: solid 2px red;
       display: flex;
-      flex-direction: column-reverse;
+      flex-direction: column;
+      justify-content: flex-end;
     `
   );
 }
