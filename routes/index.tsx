@@ -7,10 +7,11 @@ import {
   solidify,
 } from "resin/mod.ts";
 import { ChatMessageView } from "../domain/types.ts";
-import Chat from "../islands/Chat.tsx";
+import ChatTimeline from "../islands/ChatTimeline.tsx";
 import { storehouse } from "../domain/storehouse.ts";
 import { globalStyles } from "../helpers/global_styles.ts";
 import { Page } from "../helpers/Page.tsx";
+import ChatInputArea from "../islands/ChatInputArea.tsx";
 
 interface Data {
   messages: ChatMessageView[];
@@ -41,13 +42,32 @@ export default function IndexPage({ data }: PageProps<Data>) {
 
 function IndexPageContent({ messages }: { messages: ChatMessageView[] }) {
   return solidify(
-    <div>
-      <p>Site instruction goes here.</p>
-      <Chat initialMessages={messages} />
-    </div>,
+    <main>
+      <div class="site-instruction-part">
+        <p>Site instruction goes here.</p>
+      </div>
+      <ChatTimeline initialMessages={messages} />
+      <ChatInputArea />
+    </main>,
     css`
       height: 100%;
       border: solid 2px blue;
+      display: flex;
+      flex-direction: column;
+      overflow-y: hidden;
+
+      > .site-instruction-part {
+        flex-shrink: 0;
+      }
+
+      > .fc-chat-timeline {
+        flex-grow: 1;
+        overflow-y: auto;
+      }
+
+      > .fc-chat-input-area {
+        flex-shrink: 0;
+      }
     `
   );
 }

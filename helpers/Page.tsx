@@ -28,6 +28,9 @@ export function Page({ children }: Props) {
 
       > main {
         flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        overflow-y: hidden;
       }
 
       > footer {
