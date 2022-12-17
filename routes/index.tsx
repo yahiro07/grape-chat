@@ -20,7 +20,7 @@ export const handler: Handler<Data> = (
 
 export default function IndexPage({ data }: PageProps<Data>) {
   return (
-    <Page>
+    <Page pagePath="/">
       <IndexPageContent messages={data.messages} />
     </Page>
   );

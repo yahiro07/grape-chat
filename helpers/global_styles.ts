@@ -1,3 +1,4 @@
+import { colors } from "../base/ui_theme.ts";
 import { css } from "../deps.ts";
 
 export const globalStyles = css`
@@ -9,5 +10,19 @@ export const globalStyles = css`
   html,
   body {
     height: 100%;
+  }
+
+  body {
+    color: ${colors.textDark};
+  }
+
+  ul,
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 `;

@@ -7,37 +7,41 @@ import {
 } from "../deps.ts";
 import { Head } from "$fresh/runtime.ts";
 import { globalStyles } from "./global_styles.ts";
+import { NavigationIcon } from "../components/NavigationIcon.tsx";
+import { colors } from "../base/ui_theme.ts";
 
 interface Props {
+  pagePath: string;
   children: ComponentChildren;
 }
 
-export function Page({ children }: Props) {
+export function Page({ pagePath: currentPagePath, children }: Props) {
   return (
     <>
       <Head>
         <title>Nantoka Chat</title>
+        <script src="https://unpkg.com/phosphor-icons"></script>
         <ResinCssEmitter />
         <ResinCssGlobalStyle css={globalStyles} />
       </Head>
       {solidify(
         <div>
           <header>
-            <h1>Nantoka Chat</h1>
+            <HeaderContent currentPagePath={currentPagePath} />
           </header>
           <main>{children}</main>
-          <footer></footer>
+          <footer>
+            <FooterContent />
+          </footer>
         </div>,
         css`
-          border: solid 3px orange;
           height: 100%;
           display: flex;
           flex-direction: column;
+          border: solid 3px ${colors.headerBackground};
 
           > header {
             flex-shrink: 0;
-            background: orange;
-            color: white;
           }
 
           > main {
@@ -49,11 +53,71 @@ export function Page({ children }: Props) {
 
           > footer {
             flex-shrink: 0;
-            height: 20px;
-            background: #444;
           }
         `
       )}
     </>
+  );
+}
+
+function HeaderContent({ currentPagePath }: { currentPagePath: string }) {
+  return solidify(
+    <div>
+      <h1>
+        <i class="ph-sparkle" />
+        Nantoka Chat
+      </h1>
+      <nav>
+        <NavigationIcon
+          iconSpec="ph-chats"
+          pagePath="/"
+          currentPagePath={currentPagePath}
+        />
+        <NavigationIcon
+          iconSpec="ph-info"
+          pagePath="/about"
+          currentPagePath={currentPagePath}
+        />
+      </nav>
+    </div>,
+    css`
+      background: ${colors.headerBackground};
+      color: ${colors.textLight};
+      display: flex;
+      padding: 0 5px;
+
+      > h1 {
+        display: flex;
+        > i {
+          margin-top: 4px;
+          margin-right: 6px;
+          font-size: 36px;
+        }
+      }
+
+      > nav {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        display: flex;
+        gap: 10px;
+      }
+    `
+  );
+}
+
+function FooterContent() {
+  return solidify(
+    <div>copyright 🄫2022 yahiro, all rights reserved.</div>,
+    css`
+      height: 30px;
+      background: ${colors.footerBackground};
+      color: ${colors.textLight};
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 5px;
+      font-size: 14px;
+    `
   );
 }

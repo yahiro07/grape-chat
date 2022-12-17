@@ -1,9 +1,9 @@
 import { css, solidify } from "../deps.ts";
 import { Page } from "../helpers/Page.tsx";
 
-export default function SecondPage() {
+export default function AboutPage() {
   return (
-    <Page>
+    <Page pagePath="/about">
       {solidify(
         <div>
           <div class="inner">aaa</div>
