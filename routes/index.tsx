@@ -1,17 +1,10 @@
-import { Head } from "$fresh/runtime.ts";
 import { Handler, HandlerContext, PageProps } from "$fresh/server.ts";
-import {
-  css,
-  ResinCssEmitter,
-  ResinCssGlobalStyle,
-  solidify,
-} from "../deps.ts";
-import { ChatMessageView } from "../domain/types.ts";
-import ChatTimeline from "../islands/ChatTimeline.tsx";
+import { css, solidify } from "../deps.ts";
 import { storehouse } from "../domain/storehouse.ts";
-import { globalStyles } from "../helpers/global_styles.ts";
+import { ChatMessageView } from "../domain/types.ts";
 import { Page } from "../helpers/Page.tsx";
 import ChatInputArea from "../islands/ChatInputArea.tsx";
+import ChatTimeline from "../islands/ChatTimeline.tsx";
 
 interface Data {
   messages: ChatMessageView[];
@@ -27,16 +20,9 @@ export const handler: Handler<Data> = (
 
 export default function IndexPage({ data }: PageProps<Data>) {
   return (
-    <>
-      <Head>
-        <title>Fresh App</title>
-        <ResinCssEmitter />
-        <ResinCssGlobalStyle css={globalStyles} />
-      </Head>
-      <Page>
-        <IndexPageContent messages={data.messages} />
-      </Page>
-    </>
+    <Page>
+      <IndexPageContent messages={data.messages} />
+    </Page>
   );
 }
 
