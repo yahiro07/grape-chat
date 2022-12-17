@@ -1,7 +1,8 @@
+import { HandlerContext } from "../../deps_backend.ts";
+import { createRoomChannel } from "../../domain/room_channel.ts";
 import { storehouse } from "../../domain/storehouse.ts";
-import { ApiSendChatMessagePayload } from "../../domain/types.ts";
+import { ApiSendChatMessagePayload, ChatMessage } from "../../domain/types.ts";
 import { generateRandomId } from "../../helpers/domain_related_helpers.ts";
-import { HandlerContext } from "$fresh/server.ts";
 
 export async function handler(
   req: Request,
@@ -9,7 +10,11 @@ export async function handler(
 ): Promise<Response> {
   const { userId, text } = (await req.json()) as ApiSendChatMessagePayload;
   if (userId && text) {
-    storehouse.addMessage({ id: generateRandomId(8), userId, text });
+    const chatMessage: ChatMessage = { id: generateRandomId(8), userId, text };
+    storehouse.addMessage(chatMessage);
+    const roomChannel = createRoomChannel();
+    roomChannel.postMessage({ chatMessage });
+    roomChannel.close();
     return new Response("ok");
   } else {
     return new Response("ng");

@@ -1,13 +1,13 @@
-import { Handler, HandlerContext, PageProps } from "$fresh/server.ts";
+import { Handler, HandlerContext, PageProps } from "../deps_backend.ts";
 import { css, solidify } from "../deps.ts";
 import { storehouse } from "../domain/storehouse.ts";
-import { ChatMessageView } from "../domain/types.ts";
+import { ChatMessage } from "../domain/types.ts";
 import { Page } from "../helpers/Page.tsx";
 import ChatInputArea from "../islands/ChatInputArea.tsx";
 import ChatTimeline from "../islands/ChatTimeline.tsx";
 
 interface Data {
-  messages: ChatMessageView[];
+  messages: ChatMessage[];
 }
 
 export const handler: Handler<Data> = (
@@ -26,7 +26,7 @@ export default function IndexPage({ data }: PageProps<Data>) {
   );
 }
 
-function IndexPageContent({ messages }: { messages: ChatMessageView[] }) {
+function IndexPageContent({ messages }: { messages: ChatMessage[] }) {
   return solidify(
     <main>
       <div class="site-instruction-part">

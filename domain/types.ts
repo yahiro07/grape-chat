@@ -10,13 +10,11 @@ export type ChatMessage = {
   text: string;
 };
 
-export type ChatMessageView = {
-  id: string;
-  user: ChatUser;
-  text: string;
-};
-
 export type ApiSendChatMessagePayload = {
   userId: string;
   text: string;
+};
+
+export type ChatRoomEvent = {
+  chatMessage: ChatMessage;
 };

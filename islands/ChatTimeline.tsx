@@ -1,12 +1,24 @@
-import { css, solidify } from "../deps.ts";
-import { ChatMessageView } from "../domain/types.ts";
+import { css, solidify, useEffect, useState } from "../deps.ts";
+import { apiBridge } from "../domain/api_bridge.ts";
+import { ChatMessage } from "../domain/types.ts";
+import { userProvider } from "../domain/user_provider.ts";
 
 export default function ChatTimeline({
   initialMessages,
 }: {
-  initialMessages: ChatMessageView[];
+  initialMessages: ChatMessage[];
 }) {
-  const messages = initialMessages;
+  const [messages, setMessages] = useState(initialMessages);
+
+  useEffect(() => {
+    return apiBridge.subscribeMessages((event) => {
+      const { chatMessage } = event;
+      if (chatMessage) {
+        setMessages((prev) => [...prev, chatMessage]);
+      }
+    });
+  }, []);
+
   const messagesReverseOrder = messages.slice().reverse();
   return solidify(
     <div class="fc-chat-timeline">
@@ -23,12 +35,13 @@ export default function ChatTimeline({
   );
 }
 
-function Message({ message }: { message: ChatMessageView }) {
+function Message({ message }: { message: ChatMessage }) {
+  const user = userProvider.getUserById(message.userId);
   return solidify(
     <div key={message.id}>
       {message.text} <br />
-      {message.user.name} <br />
-      <img src={message.user.avatarUrl} />
+      {user.name} <br />
+      <img src={user.avatarUrl} />
     </div>,
     css`
       height: 200px;

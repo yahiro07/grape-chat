@@ -1,5 +1,4 @@
-import { ChatMessage, ChatMessageView } from "./types.ts";
-import { userProvider } from "./user_provider.ts";
+import { ChatMessage } from "./types.ts";
 
 function createStorehouse() {
   const messages: ChatMessage[] = [];
@@ -11,12 +10,8 @@ function createStorehouse() {
   }
 
   return {
-    getMessages(): ChatMessageView[] {
-      return messages.map((me) => ({
-        id: me.id,
-        user: userProvider.getUserById(me.userId)!,
-        text: me.text,
-      }));
+    getMessages(): ChatMessage[] {
+      return messages;
     },
     addMessage(message: ChatMessage) {
       messages.push(message);
