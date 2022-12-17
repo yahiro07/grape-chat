@@ -62,7 +62,6 @@ function IndexPageContent({ messages }: { messages: ChatMessageView[] }) {
 
       > .fc-chat-timeline {
         flex-grow: 1;
-        overflow-y: auto;
       }
 
       > .fc-chat-input-area {

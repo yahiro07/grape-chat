@@ -7,18 +7,18 @@ export default function ChatTimeline({
   initialMessages: ChatMessageView[];
 }) {
   const messages = initialMessages;
-
+  const messagesReverseOrder = messages.slice().reverse();
   return solidify(
     <div class="fc-chat-timeline">
-      {messages.map((message) => (
+      {messagesReverseOrder.map((message) => (
         <Message key={message.id} message={message} />
       ))}
     </div>,
     css`
       border: solid 2px red;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+      flex-direction: column-reverse;
+      overflow-y: auto;
     `
   );
 }
@@ -31,7 +31,8 @@ function Message({ message }: { message: ChatMessageView }) {
       <img src={message.user.avatarUrl} />
     </div>,
     css`
-      height: 300px;
+      height: 200px;
+      flex-shrink: 0;
       border: solid 1px blue;
     `
   );
