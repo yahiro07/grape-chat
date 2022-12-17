@@ -1,11 +1,12 @@
 import { css, solidify, useState } from "../deps.ts";
+import { apiBridge } from "../domain/api_bridge.ts";
 import { reflectTextValue } from "../helpers/form_helpers.ts";
 
 export default function ChatInputArea() {
   const [text, setText] = useState("");
 
   const sendText = () => {
-    console.log(`sending ${text}`);
+    apiBridge.sendChatMessage("user1", text);
     setText("");
   };
   return solidify(

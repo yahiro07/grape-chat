@@ -15,3 +15,8 @@ export type ChatMessageView = {
   user: ChatUser;
   text: string;
 };
+
+export type ApiSendChatMessagePayload = {
+  userId: string;
+  text: string;
+};

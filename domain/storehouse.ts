@@ -5,8 +5,8 @@ function createStorehouse() {
   const messages: ChatMessage[] = [];
   if (1) {
     messages.push(
-      { id: "m001", userId: "user1", text: "hello" },
-      { id: "m002", userId: "user2", text: "world" }
+      { id: "abcxyz01", userId: "user1", text: "hello" },
+      { id: "abcxyz02", userId: "user2", text: "world" }
     );
   }
 
