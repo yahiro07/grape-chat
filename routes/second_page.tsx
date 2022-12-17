@@ -4,7 +4,7 @@ import {
   ResinCssEmitter,
   ResinCssGlobalStyle,
   solidify,
-} from "resin/mod.ts";
+} from "../deps.ts";
 import { globalStyles } from "../helpers/global_styles.ts";
 import { Page } from "../helpers/Page.tsx";
 

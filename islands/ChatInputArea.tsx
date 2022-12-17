@@ -1,4 +1,4 @@
-import { css, solidify } from "resin/mod.ts";
+import { css, solidify } from "../deps.ts";
 
 export default function ChatInputArea() {
   return solidify(

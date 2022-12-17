@@ -1,5 +1,5 @@
-import { css, solidify } from "resin/mod.ts";
 import { ComponentChildren } from "preact";
+import { css, solidify } from "../deps.ts";
 
 interface Props {
   children: ComponentChildren;

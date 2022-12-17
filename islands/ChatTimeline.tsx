@@ -1,4 +1,4 @@
-import { css, solidify } from "resin/mod.ts";
+import { css, solidify } from "../deps.ts";
 import { ChatMessageView } from "../domain/types.ts";
 
 export default function ChatTimeline({
@@ -31,7 +31,7 @@ function Message({ message }: { message: ChatMessageView }) {
       <img src={message.user.avatarUrl} />
     </div>,
     css`
-      height: 100px;
+      height: 300px;
       border: solid 1px blue;
     `
   );

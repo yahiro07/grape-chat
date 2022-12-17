@@ -1,4 +1,4 @@
-import { css } from "resin/mod.ts";
+import { css } from "../deps.ts";
 
 export const globalStyles = css`
   * {

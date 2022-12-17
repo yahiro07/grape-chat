@@ -5,7 +5,7 @@ import {
   ResinCssEmitter,
   ResinCssGlobalStyle,
   solidify,
-} from "resin/mod.ts";
+} from "../deps.ts";
 import { ChatMessageView } from "../domain/types.ts";
 import ChatTimeline from "../islands/ChatTimeline.tsx";
 import { storehouse } from "../domain/storehouse.ts";
