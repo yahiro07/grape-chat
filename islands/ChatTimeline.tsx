@@ -39,14 +39,32 @@ function Message({ message }: { message: ChatMessage }) {
   const user = userProvider.getUserById(message.userId);
   return solidify(
     <div key={message.id}>
-      {message.text} <br />
-      {user.name} <br />
-      <img src={user.avatarUrl} />
+      <div class="avatar-part">
+        <img src={user.avatarUrl} />
+        <div>{user.name}</div>
+      </div>
+      <div class="message-part">{message.text}</div>
     </div>,
     css`
-      height: 200px;
       flex-shrink: 0;
-      border: solid 1px blue;
+      padding: 10px;
+      display: flex;
+      /* border: solid 1px blue; */
+      > .avatar-part {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        > img {
+          height: 100px;
+        }
+      }
+      > .message-part {
+        flex-grow: 1;
+        margin-left: 10px;
+        padding: 10px;
+        border: solid 1px #f08;
+        border-radius: 10px;
+      }
     `
   );
 }

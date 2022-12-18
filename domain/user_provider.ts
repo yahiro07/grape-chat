@@ -4,13 +4,23 @@ function createUserProvider() {
   const presetUsers: ChatUser[] = [
     {
       userId: "user1",
-      name: "cat",
-      avatarUrl: "/logo.svg",
+      name: "shiro",
+      avatarUrl: "/avatar/fp17.jpg",
     },
     {
       userId: "user2",
-      name: "dog",
-      avatarUrl: "/logo.svg",
+      name: "koko",
+      avatarUrl: "/avatar/fp5.jpg",
+    },
+    {
+      userId: "user3",
+      name: "same",
+      avatarUrl: "/avatar/fp2.jpg",
+    },
+    {
+      userId: "user4",
+      name: "meg",
+      avatarUrl: "/avatar/fp20.jpg",
     },
   ];
   const fallbackUser: ChatUser = {

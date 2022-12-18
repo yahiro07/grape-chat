@@ -5,7 +5,9 @@ function createStorehouse() {
   if (1) {
     messages.push(
       { id: "abcxyz01", userId: "user1", text: "hello" },
-      { id: "abcxyz02", userId: "user2", text: "world" }
+      { id: "abcxyz02", userId: "user2", text: "world" },
+      { id: "abcxyz03", userId: "user3", text: "hi" },
+      { id: "abcxyz04", userId: "user4", text: "hi" }
     );
   }
 
