@@ -1,6 +1,6 @@
 import { css, solidify, useState } from "../deps.ts";
-import { apiBridge } from "../domain/api_bridge.ts";
-import { reflectTextValue } from "../helpers/form_helpers.ts";
+import { apiBridge } from "../fe_common/api_bridge.ts";
+import { reflectTextValue } from "../fe_common/form_helpers.ts";
 
 export default function ChatInputArea() {
   const [text, setText] = useState("");

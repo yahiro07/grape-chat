@@ -1,4 +1,5 @@
-import { ApiSendChatMessagePayload, ChatRoomEvent } from "./types.ts";
+import { ApiSendChatMessagePayload, ChatRoomEvent } from "../domain/types.ts";
+import { postJson } from "./api_helpers.ts";
 
 export const apiBridge = {
   subscribeMessages(callback: (event: ChatRoomEvent) => void) {
@@ -14,10 +15,3 @@ export const apiBridge = {
     postJson<ApiSendChatMessagePayload>("/api/send", { userId, text });
   },
 };
-
-function postJson<T>(url: string, payload: T) {
-  fetch(url, {
-    method: "POST",
-    body: JSON.stringify(payload),
-  });
-}

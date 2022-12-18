@@ -1,5 +1,5 @@
 import { css, solidify } from "../deps.ts";
-import { Page } from "../helpers/Page.tsx";
+import { Page } from "../fe_common/Page.tsx";
 
 export default function AboutPage() {
   return (

@@ -8,7 +8,7 @@ import {
 import { Head } from "$fresh/runtime.ts";
 import { globalStyles } from "./global_styles.ts";
 import { NavigationIcon } from "../components/NavigationIcon.tsx";
-import { colors } from "../base/ui_theme.ts";
+import { colors } from "./theme.ts";
 
 interface Props {
   pagePath: string;

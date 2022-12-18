@@ -1,4 +1,4 @@
-import { colors } from "../base/ui_theme.ts";
+import { colors } from "./theme.ts";
 import { css } from "../deps.ts";
 
 export const globalStyles = css`

@@ -2,7 +2,7 @@ import { Handler, HandlerContext, PageProps } from "../deps_backend.ts";
 import { css, solidify } from "../deps.ts";
 import { storehouse } from "../domain/storehouse.ts";
 import { ChatMessage } from "../domain/types.ts";
-import { Page } from "../helpers/Page.tsx";
+import { Page } from "../fe_common/Page.tsx";
 import ChatInputArea from "../islands/ChatInputArea.tsx";
 import ChatTimeline from "../islands/ChatTimeline.tsx";
 

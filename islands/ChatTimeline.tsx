@@ -1,5 +1,5 @@
 import { css, solidify, useEffect, useState } from "../deps.ts";
-import { apiBridge } from "../domain/api_bridge.ts";
+import { apiBridge } from "../fe_common/api_bridge.ts";
 import { ChatMessage } from "../domain/types.ts";
 import { userProvider } from "../domain/user_provider.ts";
 
