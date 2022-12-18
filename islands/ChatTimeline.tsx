@@ -49,7 +49,6 @@ function Message({ message }: { message: ChatMessage }) {
       flex-shrink: 0;
       padding: 10px;
       display: flex;
-      /* border: solid 1px blue; */
       > .avatar-part {
         display: flex;
         flex-direction: column;
