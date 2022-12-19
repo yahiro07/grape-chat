@@ -1,9 +1,6 @@
 {
   "version": "2",
   "remote": {
-    "https://cdn.jsdelivr.net/gh/yahiro07/resin-css/mod.ts": "017c6dfba626759c90f9c68ebc02b1af5fe8b95a957d7f11dfccc26497cc623b",
-    "https://cdn.jsdelivr.net/gh/yahiro07/resin-css/src/resin_css.ts": "839cd2778a8da6463ee4d13a6acaa2e6475999399d4ea840add200fa9bfd1ae8",
-    "https://cdn.jsdelivr.net/gh/yahiro07/resin-css/src/resin_css_core.ts": "f09f6ac1d4d62e3b7db43e219109357e54ea1708553ce0b6d1f5413ca2fe42c2",
     "https://deno.land/std@0.140.0/_util/assert.ts": "e94f2eb37cebd7f199952e242c77654e43333c1ac4c5c700e929ea3aa5489f74",
     "https://deno.land/std@0.140.0/_util/os.ts": "3b4c6e27febd119d36a416d7a97bd3b0251b77c88942c8f16ee5953ea13e2e49",
     "https://deno.land/std@0.140.0/fs/_util.ts": "0fb24eb4bfebc2c194fb1afdb42b9c3dda12e368f43e8f2321f84fc77d42cb0f",
@@ -93,6 +90,10 @@
     "https://deno.land/x/fresh@1.1.2/src/server/types.ts": "dde992ab4ee635df71a7fc96fe4cd85943c1a9286ea8eb586563d5f5ca154955",
     "https://deno.land/x/importmap@0.2.1/_util.ts": "ada9a9618b537e6c0316c048a898352396c882b9f2de38aba18fd3f2950ede89",
     "https://deno.land/x/importmap@0.2.1/mod.ts": "ae3d1cd7eabd18c01a4960d57db471126b020f23b37ef14e1359bbb949227ade",
+    "https://deno.land/x/resin@v0.1.2/mod.ts": "017c6dfba626759c90f9c68ebc02b1af5fe8b95a957d7f11dfccc26497cc623b",
+    "https://deno.land/x/resin@v0.1.2/src/helpers.ts": "6f539254607314b09f0606733790f23a749a77297f7df65cbb2edb04230d786b",
+    "https://deno.land/x/resin@v0.1.2/src/resin_css.ts": "7211b80309d22070839dc2564b692b68ab6bbed510b18e03760291c78453e035",
+    "https://deno.land/x/resin@v0.1.2/src/resin_css_core.ts": "c4925a663f21d8026e767e7c316fd77a54a44c1e36b138a55208cad0e0cca0b6",
     "https://deno.land/x/rutt@0.0.13/mod.ts": "af981cfb95131152bf50fc9140fc00cb3efb6563df2eded1d408361d8577df20",
     "https://deno.land/x/ts_morph@16.0.0/common/DenoRuntime.ts": "537800e840d0994f9055164e11bf33eadf96419246af0d3c453793c3ae67bdb3",
     "https://deno.land/x/ts_morph@16.0.0/common/mod.ts": "01985d2ee7da8d1caee318a9d07664774fbee4e31602bc2bb6bb62c3489555ed",
