@@ -3,6 +3,7 @@ import { apiBridge } from "../fe_common/api_bridge.ts";
 import { ChatMessage } from "../domain/types.ts";
 import { userProvider } from "../domain/user_provider.ts";
 import { appConstants } from "../domain/app_constants.ts";
+import { avatarSizes, mqMedium, mqSmall } from "../fe_common/theme.ts";
 
 export default function ChatTimeline({
   initialMessages,
@@ -55,7 +56,9 @@ function Message({ message }: { message: ChatMessage }) {
         <div>{user.name}</div>
       </div>
       <div class="message-part">{message.text}</div>
-      <div class="avatar-part" />
+      <div class="avatar-part">
+        <img src={user.avatarUrl} class="--dummy" />
+      </div>
     </div>,
     css`
       flex-shrink: 0;
@@ -66,12 +69,14 @@ function Message({ message }: { message: ChatMessage }) {
         flex-direction: row-reverse;
       }
       > .avatar-part {
-        width: 70px;
         display: flex;
         flex-direction: column;
         align-items: center;
         > img {
-          height: 70px;
+          height: ${avatarSizes.XS};
+          &.--dummy{
+            visibility: hidden;
+          }
         }
       }
       > .message-part {
@@ -79,6 +84,14 @@ function Message({ message }: { message: ChatMessage }) {
         padding: 10px;
         border: solid 1px #f08;
         border-radius: 10px;
+      }
+
+      ${mqSmall} {
+        > .avatar-part > img{ height: ${avatarSizes.S}; }
+      }
+
+      ${mqMedium} {
+        > .avatar-part > img{ height: ${avatarSizes.M}; }
       }
     `,
   );

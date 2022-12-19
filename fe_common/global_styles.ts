@@ -14,6 +14,9 @@ export const globalStyles = css`
 
   body {
     color: ${colors.textDark};
+    background: #eee;
+    display: flex;
+    justify-content: center;
   }
 
   ul,

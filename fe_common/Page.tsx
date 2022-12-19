@@ -8,7 +8,7 @@ import {
 import { Head } from "$fresh/runtime.ts";
 import { globalStyles } from "./global_styles.ts";
 import { NavigationIcon } from "../components/NavigationIcon.tsx";
-import { colors } from "./theme.ts";
+import { colors, pageMaxWidth } from "./theme.ts";
 
 interface Props {
   pagePath: string;
@@ -36,9 +36,12 @@ export function Page({ pagePath: currentPagePath, children }: Props) {
           </footer>
         </div>,
         css`
+          width: 100%;
+          max-width: ${pageMaxWidth};
           height: 100%;
           display: flex;
           flex-direction: column;
+          background: #fff;
           border: solid 3px ${colors.headerBackground};
 
           > header {

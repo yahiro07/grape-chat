@@ -3,6 +3,7 @@ import { ChatUser, Side } from "../domain/types.ts";
 import { userProvider } from "../domain/user_provider.ts";
 import { apiBridge } from "../fe_common/api_bridge.ts";
 import { reflectTextValue } from "../fe_common/form_helpers.ts";
+import { avatarSizes, mqMedium, mqSmall } from "../fe_common/theme.ts";
 
 const allUsers = userProvider.getAllUsers();
 
@@ -68,15 +69,16 @@ function MessageEditPart({
       flex-direction: column;
       gap: 10px;
 
-      > textarea {
+      > textarea {  
         flex-grow: 1;
+        width: 100%;
         resize: none;
-        height: 70px;
         padding: 5px;
         border-radius: 6px;
       }
 
       > button {
+        flex-shrink: 0;
         padding: 2px 10px;
         height: 30px;
         border: none;
@@ -127,7 +129,7 @@ function AvatarSelector({
       user-select: none;
 
       > img {
-        height: 70px;
+        height: ${avatarSizes.XS};
         border-radius: 50%;
         cursor: pointer;
         border: solid 2px transparent;
@@ -154,6 +156,14 @@ function AvatarSelector({
         &:hover {
           opacity: 0.7;
         }
+      }
+
+      ${mqSmall} {
+        > img{ height: ${avatarSizes.S}; }
+      }
+
+      ${mqMedium} {
+        > img{ height: ${avatarSizes.M}; }
       }
     `,
   );
