@@ -36,6 +36,7 @@ export default function ChatInputArea() {
       border: solid 2px green;
       padding: 10px;
       display: flex;
+      gap: 10px;
     `,
   );
 }
@@ -69,7 +70,7 @@ function MessageEditPart({
       > textarea {
         flex-grow: 1;
         resize: none;
-        height: 40px;
+        height: 100px;
         padding: 5px;
       }
 
@@ -114,6 +115,8 @@ function AvatarSelector({
       </button>
     </div>,
     css`
+      flex-shrink: 0;
+      width: 120px;
       display: flex;
       flex-direction: column;
       align-items: center;
