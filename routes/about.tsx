@@ -16,7 +16,7 @@ export default function AboutPage() {
             height: 1600px;
             border: solid 4px blue;
           }
-        `
+        `,
       )}
     </Page>
   );

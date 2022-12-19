@@ -1,4 +1,4 @@
-import { css, solidify, useState } from "../deps.ts";
+import { css, cx, solidify, useState } from "../deps.ts";
 import { ChatUser } from "../domain/types.ts";
 import { userProvider } from "../domain/user_provider.ts";
 import { apiBridge } from "../fe_common/api_bridge.ts";
@@ -38,7 +38,7 @@ export default function ChatInputArea() {
       border: solid 2px green;
       padding: 10px;
       display: flex;
-    `
+    `,
   );
 }
 
@@ -79,7 +79,7 @@ function MessageEditPart({
         padding: 2px 10px;
         height: 40px;
       }
-    `
+    `,
   );
 }
 
@@ -106,7 +106,9 @@ function AvatarSelector({
   };
 
   return solidify(
-    <div class={`${className} side-${side}`} data-active={active}>
+    <div
+      class={cx(className, active && "--active")}
+    >
       <img src={user.avatarUrl} onClick={setActive} />
       <div>{user.name}</div>
       <button class="btn-swap" onClick={() => shiftUser(1)}>
@@ -130,7 +132,8 @@ function AvatarSelector({
           border-color: #0ae8;
         }
       }
-      &[data-active] > img {
+      
+      &.--active > img {
         border: solid 2px #0ae;
         box-shadow: 0 0 6px #0ae;
       }
@@ -152,6 +155,6 @@ function AvatarSelector({
         left: 0;
         margin: 1px;
       }
-    `
+    `,
   );
 }
