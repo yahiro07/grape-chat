@@ -1,12 +1,10 @@
 import { css, cx, solidify, useState } from "../deps.ts";
-import { ChatUser } from "../domain/types.ts";
+import { ChatUser, Side } from "../domain/types.ts";
 import { userProvider } from "../domain/user_provider.ts";
 import { apiBridge } from "../fe_common/api_bridge.ts";
 import { reflectTextValue } from "../fe_common/form_helpers.ts";
 
 const allUsers = userProvider.getAllUsers();
-
-type Side = "left" | "right";
 
 export default function ChatInputArea() {
   const [userIndexA, setUserIndexA] = useState(0);
@@ -54,7 +52,7 @@ function MessageEditPart({
   const [text, setText] = useState("");
 
   const sendText = () => {
-    apiBridge.sendChatMessage(user.userId, text);
+    apiBridge.sendChatMessage(user.userId, text, side);
     setText("");
   };
 

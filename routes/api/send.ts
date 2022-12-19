@@ -6,11 +6,13 @@ import { generateRandomId } from "../../core_helpers/domain_related_helpers.ts";
 
 export async function handler(
   req: Request,
-  _ctx: HandlerContext
+  _ctx: HandlerContext,
 ): Promise<Response> {
-  const { userId, text } = (await req.json()) as ApiSendChatMessagePayload;
+  const { userId, text, side } =
+    (await req.json()) as ApiSendChatMessagePayload;
   if (userId && text) {
-    const chatMessage: ChatMessage = { id: generateRandomId(8), userId, text };
+    const id = generateRandomId(8);
+    const chatMessage: ChatMessage = { id, userId, text, side };
     storehouse.addMessage(chatMessage);
     const roomChannel = createRoomChannel();
     roomChannel.postMessage({ chatMessage });

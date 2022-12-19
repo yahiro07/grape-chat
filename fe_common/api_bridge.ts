@@ -1,4 +1,8 @@
-import { ApiSendChatMessagePayload, ChatRoomEvent } from "../domain/types.ts";
+import {
+  ApiSendChatMessagePayload,
+  ChatRoomEvent,
+  Side,
+} from "../domain/types.ts";
 import { postJson } from "./api_helpers.ts";
 
 export const apiBridge = {
@@ -11,7 +15,7 @@ export const apiBridge = {
     eventSource.addEventListener("message", listener);
     return () => eventSource.removeEventListener("message", listener);
   },
-  sendChatMessage(userId: string, text: string) {
-    postJson<ApiSendChatMessagePayload>("/api/send", { userId, text });
+  sendChatMessage(userId: string, text: string, side: Side) {
+    postJson<ApiSendChatMessagePayload>("/api/send", { userId, text, side });
   },
 };
