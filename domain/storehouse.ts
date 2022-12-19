@@ -1,3 +1,4 @@
+import { appConstants } from "./app_constants.ts";
 import { ChatMessage } from "./types.ts";
 
 function createStorehouse() {
@@ -16,6 +17,9 @@ function createStorehouse() {
       return messages;
     },
     addMessage(message: ChatMessage) {
+      if (messages.length >= appConstants.maxChatLogCount) {
+        messages.shift();
+      }
       messages.push(message);
     },
   };

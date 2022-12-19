@@ -2,6 +2,7 @@ import { css, solidify, useEffect, useState } from "../deps.ts";
 import { apiBridge } from "../fe_common/api_bridge.ts";
 import { ChatMessage } from "../domain/types.ts";
 import { userProvider } from "../domain/user_provider.ts";
+import { appConstants } from "../domain/app_constants.ts";
 
 export default function ChatTimeline({
   initialMessages,
@@ -11,10 +12,20 @@ export default function ChatTimeline({
   const [messages, setMessages] = useState(initialMessages);
 
   useEffect(() => {
+    const addMessage = (msg: ChatMessage) => {
+      setMessages((prevMessages) => {
+        const newMessages = prevMessages.slice();
+        if (newMessages.length >= appConstants.maxChatLogCount) {
+          newMessages.shift();
+        }
+        newMessages.push(msg);
+        return newMessages;
+      });
+    };
     return apiBridge.subscribeMessages((event) => {
       const { chatMessage } = event;
       if (chatMessage) {
-        setMessages((prev) => [...prev, chatMessage]);
+        addMessage(chatMessage);
       }
     });
   }, []);
