@@ -65,18 +65,22 @@ function MessageEditPart({
     css`
       flex-grow: 1;
       display: flex;
+      flex-direction: column;
       gap: 10px;
 
       > textarea {
         flex-grow: 1;
         resize: none;
-        height: 100px;
+        height: 70px;
         padding: 5px;
+        border-radius: 6px;
       }
 
       > button {
         padding: 2px 10px;
-        height: 40px;
+        height: 30px;
+        border: none;
+        border-radius: 15px;
       }
     `,
   );
@@ -116,7 +120,6 @@ function AvatarSelector({
     </div>,
     css`
       flex-shrink: 0;
-      width: 120px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -124,7 +127,7 @@ function AvatarSelector({
       user-select: none;
 
       > img {
-        height: 100px;
+        height: 70px;
         border-radius: 50%;
         cursor: pointer;
         border: solid 2px transparent;
@@ -140,8 +143,6 @@ function AvatarSelector({
       }
 
       > .btn-swap {
-        position: absolute;
-        bottom: 0;
         width: 25px;
         height: 25px;
         border: solid 1px #fff;
@@ -153,8 +154,6 @@ function AvatarSelector({
         &:hover {
           opacity: 0.7;
         }
-        left: 0;
-        margin: 1px;
       }
     `,
   );

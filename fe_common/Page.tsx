@@ -20,6 +20,7 @@ export function Page({ pagePath: currentPagePath, children }: Props) {
     <>
       <Head>
         <title>Nantoka Chat</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <script src="https://unpkg.com/phosphor-icons"></script>
         <ResinCssEmitter />
         <ResinCssGlobalStyle css={globalStyles} />
@@ -54,7 +55,7 @@ export function Page({ pagePath: currentPagePath, children }: Props) {
           > footer {
             flex-shrink: 0;
           }
-        `
+        `,
       )}
     </>
   );
@@ -102,7 +103,7 @@ function HeaderContent({ currentPagePath }: { currentPagePath: string }) {
         display: flex;
         gap: 10px;
       }
-    `
+    `,
   );
 }
 
@@ -118,6 +119,6 @@ function FooterContent() {
       align-items: center;
       padding: 0 5px;
       font-size: 14px;
-    `
+    `,
   );
 }

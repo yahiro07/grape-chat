@@ -61,22 +61,21 @@ function Message({ message }: { message: ChatMessage }) {
       flex-shrink: 0;
       padding: 10px;
       display: flex;
+      gap: 10px;
       &.--side-right{
         flex-direction: row-reverse;
       }
       > .avatar-part {
-        width: 120px;
-        flex-shrink: 0;
+        width: 70px;
         display: flex;
         flex-direction: column;
         align-items: center;
         > img {
-          height: 100px;
+          height: 70px;
         }
       }
       > .message-part {
         flex-grow: 1;
-        margin-left: 10px;
         padding: 10px;
         border: solid 1px #f08;
         border-radius: 10px;
