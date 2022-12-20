@@ -74,6 +74,7 @@ function Message({ message }: { message: ChatMessage }) {
         align-items: center;
         > img {
           height: ${avatarSizes.XS};
+          border-radius: 50%;
           &.--dummy{
             visibility: hidden;
           }
@@ -83,6 +84,7 @@ function Message({ message }: { message: ChatMessage }) {
         flex-grow: 1;
         padding: 10px;
         border: solid 1px #f08;
+        background: #fff;
         border-radius: 10px;
       }
 

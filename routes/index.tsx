@@ -12,7 +12,7 @@ interface Data {
 
 export const handler: Handler<Data> = (
   req: Request,
-  ctx: HandlerContext<Data>
+  ctx: HandlerContext<Data>,
 ) => {
   const messages = storehouse.getMessages();
   return ctx.render({ messages });
@@ -29,30 +29,52 @@ export default function IndexPage({ data }: PageProps<Data>) {
 function IndexPageContent({ messages }: { messages: ChatMessage[] }) {
   return solidify(
     <main>
-      <div class="site-instruction-part">
-        <p>Site instruction goes here.</p>
+      <div class="bg-layer">
       </div>
-      <ChatTimeline initialMessages={messages} />
-      <ChatInputArea />
+      <div class="content-layer">
+        <div class="site-instruction-part">
+          <p>Site instruction goes here.</p>
+        </div>
+        <ChatTimeline initialMessages={messages} />
+        <ChatInputArea />
+      </div>
     </main>,
     css`
+      width: 100%;
       height: 100%;
-      border: solid 2px blue;
-      display: flex;
-      flex-direction: column;
-      overflow-y: hidden;
-
-      > .site-instruction-part {
-        flex-shrink: 0;
+      position: relative;
+      >*{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
       }
 
-      > .fc-chat-timeline {
-        flex-grow: 1;
+      > .bg-layer{
+        background: url('/bg.png');
+        opacity: 0.3;
       }
 
-      > .fc-chat-input-area {
-        flex-shrink: 0;
+      > .content-layer{
+        border: solid 2px blue;
+        display: flex;
+        flex-direction: column;
+        overflow-y: hidden;
+
+        > .site-instruction-part {
+          flex-shrink: 0;
+        }
+
+        > .fc-chat-timeline {
+          flex-grow: 1;
+        }
+
+        > .fc-chat-input-area {
+          flex-shrink: 0;
+        }
       }
-    `
+
+    `,
   );
 }
