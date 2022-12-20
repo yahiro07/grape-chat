@@ -21,7 +21,11 @@ export function Page({ pagePath: currentPagePath, children }: Props) {
       <Head>
         <title>Nantoka Chat</title>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <script src="https://unpkg.com/phosphor-icons"></script>
+        <script src="https://unpkg.com/phosphor-icons" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
+          rel="stylesheet"
+        />
         <ResinCssEmitter />
         <ResinCssGlobalStyle css={globalStyles} />
       </Head>
@@ -112,7 +116,7 @@ function HeaderContent({ currentPagePath }: { currentPagePath: string }) {
 
 function FooterContent() {
   return solidify(
-    <div>copyright 🄫2022 yahiro, all rights reserved.</div>,
+    <div>copyright ©2022 yahiro, all rights reserved.</div>,
     css`
       height: 30px;
       background: ${colors.footerBackground};

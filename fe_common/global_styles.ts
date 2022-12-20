@@ -36,5 +36,7 @@ export const globalStyles = css`
     }
   }
 
-
+  body{
+    font-family: 'Rubik', sans-serif;
+  }
 `;
