@@ -1,9 +1,9 @@
+import { AvatarIcon } from "../components/AvatarIcon.tsx";
 import { css, cx, solidify, useState } from "../deps.ts";
 import { ChatUser, Side } from "../domain/types.ts";
 import { userProvider } from "../domain/user_provider.ts";
 import { apiBridge } from "../fe_common/api_bridge.ts";
 import { reflectTextValue } from "../fe_common/form_helpers.ts";
-import { avatarSizes, mqMedium, mqSmall } from "../fe_common/theme.ts";
 
 const allUsers = userProvider.getAllUsers();
 
@@ -113,9 +113,14 @@ function AvatarSelector({
 
   return solidify(
     <div
-      class={cx(className, active && "--active")}
+      class={cx(className)}
     >
-      <img src={user.avatarUrl} onClick={setActive} />
+      <AvatarIcon
+        imageUrl={user.avatarUrl}
+        onClick={setActive}
+        canSelect
+        selected={active}
+      />
       <div>{user.name}</div>
       <button class="btn-swap" onClick={() => shiftUser(1)}>
         <i class="ph-arrows-clockwise" />
@@ -128,22 +133,6 @@ function AvatarSelector({
       align-items: center;
       position: relative;
       user-select: none;
-
-      > img {
-        height: ${avatarSizes.XS};
-        border-radius: 50%;
-        cursor: pointer;
-        border: solid 2px transparent;
-        transition: all 0.3s;
-        &:hover {
-          border-color: #0ae8;
-        }
-      }
-      
-      &.--active > img {
-        border: solid 2px #0ae;
-        box-shadow: 0 0 6px #0ae;
-      }
 
       > .btn-swap {
         width: 25px;
@@ -160,14 +149,6 @@ function AvatarSelector({
         &:hover {
           opacity: 0.7;
         }
-      }
-
-      ${mqSmall} {
-        > img{ height: ${avatarSizes.S}; }
-      }
-
-      ${mqMedium} {
-        > img{ height: ${avatarSizes.M}; }
       }
     `,
   );

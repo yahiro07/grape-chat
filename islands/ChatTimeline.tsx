@@ -3,7 +3,7 @@ import { apiBridge } from "../fe_common/api_bridge.ts";
 import { ChatMessage } from "../domain/types.ts";
 import { userProvider } from "../domain/user_provider.ts";
 import { appConstants } from "../domain/app_constants.ts";
-import { avatarSizes, mqMedium, mqSmall } from "../fe_common/theme.ts";
+import { AvatarIcon } from "../components/AvatarIcon.tsx";
 
 export default function ChatTimeline({
   initialMessages,
@@ -51,12 +51,13 @@ function Message({ message }: { message: ChatMessage }) {
   return solidify(
     <div class={`--side-${message.side}`}>
       <div class="avatar-part">
-        <img src={user.avatarUrl} />
+        <AvatarIcon imageUrl={user.avatarUrl} />
         <div>{user.name}</div>
       </div>
       <div class="message-part">{message.text}</div>
       <div class="avatar-part --dummy">
-        <img src={user.avatarUrl} />
+        {/* placeholder */}
+        <AvatarIcon imageUrl={user.avatarUrl} />
       </div>
     </div>,
     css`
@@ -71,10 +72,6 @@ function Message({ message }: { message: ChatMessage }) {
         display: flex;
         flex-direction: column;
         align-items: center;
-        > img {
-          height: ${avatarSizes.XS};
-          border-radius: 50%;
-        }
         &.--dummy{
           visibility: hidden;
         }
@@ -85,14 +82,6 @@ function Message({ message }: { message: ChatMessage }) {
         border: solid 1px #f08;
         background: #fff;
         border-radius: 10px;
-      }
-
-      ${mqSmall} {
-        > .avatar-part > img{ height: ${avatarSizes.S}; }
-      }
-
-      ${mqMedium} {
-        > .avatar-part > img{ height: ${avatarSizes.M}; }
       }
     `,
   );
