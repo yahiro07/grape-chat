@@ -32,9 +32,6 @@ function IndexPageContent({ messages }: { messages: ChatMessage[] }) {
       <div class="bg-layer">
       </div>
       <div class="content-layer">
-        <div class="site-instruction-part">
-          <p>Site instruction goes here.</p>
-        </div>
         <ChatTimeline initialMessages={messages} />
         <ChatInputArea />
       </div>
@@ -57,14 +54,9 @@ function IndexPageContent({ messages }: { messages: ChatMessage[] }) {
       }
 
       > .content-layer{
-        border: solid 2px blue;
         display: flex;
         flex-direction: column;
         overflow-y: hidden;
-
-        > .site-instruction-part {
-          flex-shrink: 0;
-        }
 
         > .fc-chat-timeline {
           flex-grow: 1;

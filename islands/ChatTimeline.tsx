@@ -39,7 +39,6 @@ export default function ChatTimeline({
       ))}
     </div>,
     css`
-      border: solid 2px red;
       display: flex;
       flex-direction: column-reverse;
       overflow-y: auto;

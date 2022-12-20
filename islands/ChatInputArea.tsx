@@ -34,7 +34,7 @@ export default function ChatInputArea() {
       />
     </div>,
     css`
-      border: solid 2px green;
+      border-top: solid 1px #ccc;
       padding: 10px;
       display: flex;
       gap: 10px;
@@ -83,6 +83,7 @@ function MessageEditPart({
         height: 30px;
         border: none;
         border-radius: 15px;
+        cursor: pointer;
       }
     `,
   );
@@ -147,12 +148,15 @@ function AvatarSelector({
       > .btn-swap {
         width: 25px;
         height: 25px;
-        border: solid 1px #fff;
+        border: none;
         border-radius: 50%;
         background: #fa8;
         color: #fff;
         cursor: pointer;
         transition: all 0.3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         &:hover {
           opacity: 0.7;
         }

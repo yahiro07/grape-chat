@@ -28,4 +28,13 @@ export const globalStyles = css`
     text-decoration: none;
     color: inherit;
   }
+
+  button, input, textarea{
+    &:focus{
+      border: none;
+      outline: solid 2px #0af;
+    }
+  }
+
+
 `;
