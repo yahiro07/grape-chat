@@ -29,14 +29,14 @@ export const globalStyles = css`
     color: inherit;
   }
 
-  button, input, textarea{
+  input, textarea, button{
     &:focus{
       border: none;
       outline: solid 2px #0af;
     }
   }
 
-  body{
+  body, input, textarea, button{
     font-family: 'Rubik', sans-serif;
   }
 `;
