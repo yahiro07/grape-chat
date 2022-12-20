@@ -22,8 +22,14 @@ export function Page({ pagePath: currentPagePath, children }: Props) {
         <title>Nantoka Chat</title>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <script src="https://unpkg.com/phosphor-icons" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap"
           rel="stylesheet"
         />
         <ResinCssEmitter />
@@ -96,9 +102,9 @@ function HeaderContent({ currentPagePath }: { currentPagePath: string }) {
 
       > h1 {
         display: flex;
+        padding: 2px 0;
         > i {
-          margin-top: 4px;
-          margin-right: 6px;
+          margin-right: 2px;
           font-size: 36px;
         }
       }

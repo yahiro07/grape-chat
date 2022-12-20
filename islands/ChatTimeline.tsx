@@ -55,8 +55,8 @@ function Message({ message }: { message: ChatMessage }) {
         <div>{user.name}</div>
       </div>
       <div class="message-part">{message.text}</div>
-      <div class="avatar-part">
-        <img src={user.avatarUrl} class="--dummy" />
+      <div class="avatar-part --dummy">
+        <img src={user.avatarUrl} />
       </div>
     </div>,
     css`
@@ -74,9 +74,9 @@ function Message({ message }: { message: ChatMessage }) {
         > img {
           height: ${avatarSizes.XS};
           border-radius: 50%;
-          &.--dummy{
-            visibility: hidden;
-          }
+        }
+        &.--dummy{
+          visibility: hidden;
         }
       }
       > .message-part {
