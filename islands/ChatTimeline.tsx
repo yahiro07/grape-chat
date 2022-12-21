@@ -4,6 +4,7 @@ import { ChatMessage } from "../domain/types.ts";
 import { userProvider } from "../domain/user_provider.ts";
 import { appConstants } from "../domain/app_constants.ts";
 import { AvatarIcon } from "../components/AvatarIcon.tsx";
+import { colors } from "../fe_common/theme.ts";
 
 export default function ChatTimeline({
   initialMessages,
@@ -82,7 +83,7 @@ function Message({ message }: { message: ChatMessage }) {
       > .message-part {
         flex-grow: 1;
         padding: 10px;
-        border: solid 1px #f80;
+        border: solid 1px ${colors.messageBalloonEdge};
         background: #fff;
         border-radius: 12px;
         white-space: pre-wrap;

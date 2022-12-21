@@ -1,8 +1,9 @@
 export const colors = {
-  textLight: "#FFF",
+  textLight: "#fff",
   textDark: "#444",
-  headerBackground: "#FA0",
+  headerBackground: "#96f",
   footerBackground: "#555",
+  messageBalloonEdge: "#A6F",
 };
 
 export const pageMaxWidth = "700px";

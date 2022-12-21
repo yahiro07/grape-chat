@@ -9,6 +9,7 @@ import { Head } from "$fresh/runtime.ts";
 import { globalStyle } from "./global_style.ts";
 import { NavigationIcon } from "../components/NavigationIcon.tsx";
 import { colors, pageMaxWidth } from "./theme.ts";
+import { appConstants } from "../domain/app_constants.ts";
 
 interface Props {
   pagePath: string;
@@ -19,7 +20,7 @@ export function Page({ pagePath: currentPagePath, children }: Props) {
   return (
     <>
       <Head>
-        <title>Nantoka Chat</title>
+        <title>{appConstants.siteTitle}</title>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <script src="https://unpkg.com/phosphor-icons" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -78,8 +79,8 @@ function HeaderContent({ currentPagePath }: { currentPagePath: string }) {
   return solidify(
     <div>
       <h1>
-        <i class="ph-sparkle" />
-        Nantoka Chat
+        <img src={appConstants.siteTitleLogoUrl} />
+        {appConstants.siteTitle}
       </h1>
       <nav>
         <NavigationIcon
@@ -102,10 +103,11 @@ function HeaderContent({ currentPagePath }: { currentPagePath: string }) {
 
       > h1 {
         display: flex;
+        align-items: center;
         padding: 2px 0;
-        > i {
-          margin-right: 2px;
-          font-size: 36px;
+        > img{
+          height: 36px;
+          margin-right: 4px;
         }
       }
 

@@ -50,7 +50,7 @@ function IndexPageContent({ messages }: { messages: ChatMessage[] }) {
 
       > .bg-layer{
         background: url('/bg.png');
-        opacity: 0.3;
+        opacity: 0.35;
       }
 
       > .content-layer{
