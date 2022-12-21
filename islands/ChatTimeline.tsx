@@ -85,6 +85,7 @@ function Message({ message }: { message: ChatMessage }) {
         border: solid 1px #f80;
         background: #fff;
         border-radius: 12px;
+        white-space: pre-wrap;
       }
     `,
   );

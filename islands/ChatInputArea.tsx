@@ -55,13 +55,25 @@ function MessageEditPart({
   const [text, setText] = useState("");
 
   const sendText = () => {
-    apiBridge.sendChatMessage(user.userId, text, side);
-    setText("");
+    if (text.trim()) {
+      apiBridge.sendChatMessage(user.userId, text, side);
+      setText("");
+    }
+  };
+
+  const onKeyUp = (e: KeyboardEvent) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      sendText();
+    }
   };
 
   return solidify(
     <div class={className}>
-      <textarea value={text} onInput={reflectTextValue(setText)} />
+      <textarea
+        value={text}
+        onInput={reflectTextValue(setText)}
+        onKeyUp={onKeyUp}
+      />
       <button onClick={sendText}>send</button>
     </div>,
     css`
