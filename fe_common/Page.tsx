@@ -10,6 +10,7 @@ import { globalStyle } from "./global_style.ts";
 import { NavigationIcon } from "../components/NavigationIcon.tsx";
 import { colors, pageMaxWidth } from "./theme.ts";
 import { appConstants } from "../domain/app_constants.ts";
+import { uiConstants } from "./ui_constants.ts";
 
 interface Props {
   pagePath: string;
@@ -20,7 +21,7 @@ export function Page({ pagePath: currentPagePath, children }: Props) {
   return (
     <>
       <Head>
-        <title>{appConstants.siteTitle}</title>
+        <title>{uiConstants.siteTitle}</title>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <script src="https://unpkg.com/phosphor-icons" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -79,8 +80,8 @@ function HeaderContent({ currentPagePath }: { currentPagePath: string }) {
   return solidify(
     <div>
       <h1>
-        <img src={appConstants.siteTitleLogoUrl} />
-        {appConstants.siteTitle}
+        <img src={uiConstants.siteTitleLogoUrl} />
+        {uiConstants.siteTitle}
       </h1>
       <nav>
         <NavigationIcon
