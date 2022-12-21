@@ -88,6 +88,7 @@ function MessageEditPart({
         resize: none;
         padding: 10px;
         border-radius: 8px;
+        font-size: 16px;
       }
 
       > button {
@@ -96,6 +97,7 @@ function MessageEditPart({
         height: 30px;
         border: none;
         border-radius: 15px;
+        font-size: 16px;
         ${commonButtonStyle};
       }
     `,
