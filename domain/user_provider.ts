@@ -14,7 +14,7 @@ function createUserProvider() {
     },
     {
       userId: "user3",
-      name: "same",
+      name: "mano",
       avatarUrl: "/avatar/fp2.jpg",
     },
     {
