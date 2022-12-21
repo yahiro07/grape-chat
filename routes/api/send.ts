@@ -13,7 +13,7 @@ export async function handler(
   if (userId && text) {
     const id = generateRandomId(8);
     const chatMessage: ChatMessage = { id, userId, text, side };
-    storehouse.addMessage(chatMessage);
+    await storehouse.addMessage(chatMessage);
     const roomChannel = createRoomChannel();
     roomChannel.postMessage({ chatMessage });
     roomChannel.close();
