@@ -1,6 +1,5 @@
-avatars
+avatar
 https://iconbu.com/
-(japanese site)
 
 bg_grape.png
 made by me
@@ -8,4 +7,5 @@ made by me
 grapes-svgrepo-com.svg
 https://www.svgrepo.com/svg/368276/grapes
 
-
+favicon.ico
+https://favicon.io/emoji-favicons/grapes
