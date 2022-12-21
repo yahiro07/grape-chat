@@ -1,7 +1,8 @@
 avatars
 https://iconbu.com/
+(japanese site)
 
-bg.png
+bg_grape.png
 made by me
 
 grapes-svgrepo-com.svg

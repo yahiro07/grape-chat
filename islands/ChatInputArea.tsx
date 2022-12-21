@@ -89,6 +89,7 @@ function MessageEditPart({
         padding: 10px;
         border-radius: 8px;
         font-size: 16px;
+        background: #fffc;
       }
 
       > button {

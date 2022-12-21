@@ -84,7 +84,7 @@ function Message({ message }: { message: ChatMessage }) {
         flex-grow: 1;
         padding: 10px;
         border: solid 1px ${colors.messageBalloonEdge};
-        background: #fff;
+        background: #fffc;
         border-radius: 12px;
         white-space: pre-wrap;
       }
