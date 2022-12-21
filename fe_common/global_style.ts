@@ -1,7 +1,7 @@
 import { colors } from "./theme.ts";
 import { css } from "../deps.ts";
 
-export const globalStyles = css`
+export const globalStyle = css`
   * {
     box-sizing: border-box;
     margin: 0;

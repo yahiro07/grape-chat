@@ -3,6 +3,7 @@ import { css, cx, solidify, useState } from "../deps.ts";
 import { ChatUser, Side } from "../domain/types.ts";
 import { userProvider } from "../domain/user_provider.ts";
 import { apiBridge } from "../fe_common/api_bridge.ts";
+import { commonButtonStyle } from "../fe_common/common_styles.ts";
 import { reflectTextValue } from "../fe_common/form_helpers.ts";
 
 const allUsers = userProvider.getAllUsers();
@@ -73,8 +74,8 @@ function MessageEditPart({
         flex-grow: 1;
         width: 100%;
         resize: none;
-        padding: 5px;
-        border-radius: 6px;
+        padding: 10px;
+        border-radius: 8px;
       }
 
       > button {
@@ -83,7 +84,7 @@ function MessageEditPart({
         height: 30px;
         border: none;
         border-radius: 15px;
-        cursor: pointer;
+        ${commonButtonStyle};
       }
     `,
   );
@@ -141,14 +142,7 @@ function AvatarSelector({
         border-radius: 50%;
         background: #fa8;
         color: #fff;
-        cursor: pointer;
-        transition: all 0.3s;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        &:hover {
-          opacity: 0.7;
-        }
+        ${commonButtonStyle};
       }
     `,
   );

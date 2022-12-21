@@ -6,7 +6,7 @@ import {
   solidify,
 } from "../deps.ts";
 import { Head } from "$fresh/runtime.ts";
-import { globalStyles } from "./global_styles.ts";
+import { globalStyle } from "./global_style.ts";
 import { NavigationIcon } from "../components/NavigationIcon.tsx";
 import { colors, pageMaxWidth } from "./theme.ts";
 
@@ -33,7 +33,7 @@ export function Page({ pagePath: currentPagePath, children }: Props) {
           rel="stylesheet"
         />
         <ResinCssEmitter />
-        <ResinCssGlobalStyle css={globalStyles} />
+        <ResinCssGlobalStyle css={globalStyle} />
       </Head>
       {solidify(
         <div>
@@ -131,7 +131,7 @@ function FooterContent() {
       justify-content: center;
       align-items: center;
       padding: 0 5px;
-      font-size: 14px;
+      font-size: 13px;
     `,
   );
 }

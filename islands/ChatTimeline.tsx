@@ -82,9 +82,9 @@ function Message({ message }: { message: ChatMessage }) {
       > .message-part {
         flex-grow: 1;
         padding: 10px;
-        border: solid 1px #f08;
+        border: solid 1px #f80;
         background: #fff;
-        border-radius: 10px;
+        border-radius: 12px;
       }
     `,
   );
