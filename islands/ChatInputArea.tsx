@@ -5,6 +5,7 @@ import { userProvider } from "../domain/user_provider.ts";
 import { apiBridge } from "../fe_common/api_bridge.ts";
 import { commonButtonStyle } from "../fe_common/common_styles.ts";
 import { reflectTextValue } from "../fe_common/form_helpers.ts";
+import { colors } from "../fe_common/theme.ts";
 
 const allUsers = userProvider.getAllUsers();
 
@@ -35,7 +36,7 @@ export default function ChatInputArea() {
       />
     </div>,
     css`
-      border-top: solid 1px #ccc;
+      border-top: solid 1px ${colors.uiAreaSplitter};
       padding: 10px;
       display: flex;
       gap: 10px;
@@ -86,10 +87,11 @@ function MessageEditPart({
         flex-grow: 1;
         width: 100%;
         resize: none;
+        border: solid 1px ${colors.chatInputTextAreaEdge};
         padding: 10px;
         border-radius: 8px;
         font-size: 16px;
-        background: #fffc;
+        background: ${colors.messageBalloonFill};
       }
 
       > button {

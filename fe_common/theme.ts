@@ -3,7 +3,10 @@ export const colors = {
   textDark: "#444",
   headerBackground: "#88f",
   footerBackground: "#555",
-  messageBalloonEdge: "#99c",
+  messageBalloonEdge: "#f9c",
+  messageBalloonFill: "#fffd",
+  chatInputTextAreaEdge: "#79b",
+  uiAreaSplitter: "#88f",
 };
 
 export const pageMaxWidth = "700px";
