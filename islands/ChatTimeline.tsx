@@ -1,4 +1,4 @@
-import { css, solidify, useEffect, useState } from "../deps.ts";
+import { css, solidify, useEffect, useRef, useState } from "../deps.ts";
 import { apiBridge } from "../fe_common/api_bridge.ts";
 import { ChatMessage } from "../domain/types.ts";
 import { userProvider } from "../domain/user_provider.ts";
@@ -11,6 +11,7 @@ export default function ChatTimeline({
   initialMessages: ChatMessage[];
 }) {
   const [messages, setMessages] = useState(initialMessages);
+  const refTimelineDiv = useRef<HTMLDivElement>(undefined!);
 
   useEffect(() => {
     const addMessage = (msg: ChatMessage) => {
@@ -22,6 +23,8 @@ export default function ChatTimeline({
         newMessages.push(msg);
         return newMessages;
       });
+      const timelineDiv = refTimelineDiv.current;
+      timelineDiv.scrollTop = timelineDiv.scrollHeight;
     };
     return apiBridge.subscribeMessages((event) => {
       const { chatMessage } = event;
@@ -33,7 +36,7 @@ export default function ChatTimeline({
 
   const messagesReverseOrder = messages.slice().reverse();
   return solidify(
-    <div class="fc-chat-timeline">
+    <div class="fc-chat-timeline" ref={refTimelineDiv}>
       {messagesReverseOrder.map((message) => (
         <Message key={message.id} message={message} />
       ))}
