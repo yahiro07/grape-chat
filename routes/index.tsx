@@ -5,7 +5,6 @@ import { ChatMessage } from "../domain/types.ts";
 import { Page } from "../fe_common/Page.tsx";
 import ChatInputArea from "../islands/ChatInputArea.tsx";
 import ChatTimeline from "../islands/ChatTimeline.tsx";
-import { appConstants } from "../domain/app_constants.ts";
 import { uiConstants } from "../fe_common/ui_constants.ts";
 
 interface Data {
