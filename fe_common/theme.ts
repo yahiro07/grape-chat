@@ -1,10 +1,10 @@
 export const colors = {
   textLight: "#fff",
   textDark: "#444",
-  headerBackground: "#88f",
+  headerBackground: "#78f",
   footerBackground: "#555",
-  messageBalloonEdge: "#f9c",
-  messageBalloonFill: "#fffd",
+  messageBalloonEdge: "#8af",
+  messageBalloonFill: "#fff",
   chatInputTextAreaEdge: "#79b",
   uiAreaSplitter: "#88f",
 };

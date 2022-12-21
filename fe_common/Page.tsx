@@ -9,7 +9,6 @@ import { Head } from "$fresh/runtime.ts";
 import { globalStyle } from "./global_style.ts";
 import { NavigationIcon } from "../components/NavigationIcon.tsx";
 import { colors, pageMaxWidth } from "./theme.ts";
-import { appConstants } from "../domain/app_constants.ts";
 import { uiConstants } from "./ui_constants.ts";
 
 interface Props {

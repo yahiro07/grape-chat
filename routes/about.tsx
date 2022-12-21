@@ -106,7 +106,7 @@ function DocumentContent() {
       > h1 {
         font-size: 40px;
         font-weight: bold;
-        color: #428;
+        color: #64A;
       }
 
       > h3 {

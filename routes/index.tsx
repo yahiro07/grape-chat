@@ -6,6 +6,7 @@ import { Page } from "../fe_common/Page.tsx";
 import ChatInputArea from "../islands/ChatInputArea.tsx";
 import ChatTimeline from "../islands/ChatTimeline.tsx";
 import { uiConstants } from "../fe_common/ui_constants.ts";
+import { mqMedium, mqSmall } from "../fe_common/theme.ts";
 
 interface Data {
   messages: ChatMessage[];
@@ -51,8 +52,7 @@ function IndexPageContent({ messages }: { messages: ChatMessage[] }) {
 
       > .bg-layer{
         background-image: url(${uiConstants.pageBackgroundImageUrl});
-        background-size: 150px;
-        opacity: 0.4;
+        background-size: 120px;
       }
 
       > .content-layer{
@@ -66,6 +66,18 @@ function IndexPageContent({ messages }: { messages: ChatMessage[] }) {
 
         > .fc-chat-input-area {
           flex-shrink: 0;
+        }
+      }
+
+      ${mqSmall}{
+        > .bg-layer{
+          background-size: 160px;
+        }   
+      }
+
+      ${mqMedium}{
+        > .bg-layer{
+          background-size: 200px;
         }
       }
 
