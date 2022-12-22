@@ -7,11 +7,11 @@ function createStorehouse() {
   const persistEnabled = Deno.env.get("ENABLE_CHAT_LOG_PERSISTENCE");
   const storageKey = "grape-chat-messages";
 
-  function saveMessages() {
+  function savePersistMessages() {
     localStorage.setItem(storageKey, JSON.stringify(messages));
   }
 
-  function loadMessages() {
+  function loadPersistMessages() {
     const text = localStorage.getItem(storageKey);
     if (text) {
       try {
@@ -27,20 +27,20 @@ function createStorehouse() {
     }
   }
   if (persistEnabled) {
-    loadMessages();
+    loadPersistMessages();
   }
 
   return {
     getMessages(): ChatMessage[] {
       return messages;
     },
-    async addMessage(message: ChatMessage) {
+    addMessage(message: ChatMessage) {
       if (messages.length >= appConstants.maxChatLogCount) {
         messages.shift();
       }
       messages.push(message);
       if (persistEnabled) {
-        await saveMessages();
+        savePersistMessages();
       }
     },
   };
