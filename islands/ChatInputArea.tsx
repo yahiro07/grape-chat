@@ -1,18 +1,48 @@
 import { AvatarIcon } from "../components/AvatarIcon.tsx";
-import { css, cx, solidify, useState } from "../deps.ts";
+import { css, cx, solidify, useEffect, useState } from "../deps.ts";
 import { ChatUser, Side } from "../domain/types.ts";
 import { userProvider } from "../domain/user_provider.ts";
 import { apiBridge } from "../fe_common/api_bridge.ts";
 import { commonButtonStyle } from "../fe_common/common_styles.ts";
 import { reflectTextValue } from "../fe_common/form_helpers.ts";
+import {
+  readLocalStorageObject,
+  writeLocalStorageObject,
+} from "../fe_common/local_storage_helpers.ts";
 import { colors } from "../fe_common/theme.ts";
 
 const allUsers = userProvider.getAllUsers();
+
+type AvatarSelectionPersistData = {
+  userIndexA: number;
+  userIndexB: number;
+  activeSide: Side;
+};
+const localStorageKey = `grape_chat_avatar_selection_state`;
 
 export default function ChatInputArea() {
   const [userIndexA, setUserIndexA] = useState(0);
   const [userIndexB, setUserIndexB] = useState(1);
   const [activeSide, setActiveSide] = useState<Side>("left");
+
+  useEffect(() => {
+    const data = readLocalStorageObject<AvatarSelectionPersistData>(
+      localStorageKey,
+    );
+    if (data) {
+      setUserIndexA(data.userIndexA ?? 0);
+      setUserIndexB(data.userIndexB ?? 1);
+      setActiveSide(data.activeSide ?? "left");
+    }
+  }, []);
+
+  useEffect(() => {
+    writeLocalStorageObject<AvatarSelectionPersistData>(localStorageKey, {
+      userIndexA,
+      userIndexB,
+      activeSide,
+    });
+  }, [userIndexA, userIndexB, activeSide]);
 
   const userIndex = activeSide === "left" ? userIndexA : userIndexB;
   return solidify(
