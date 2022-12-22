@@ -28,7 +28,6 @@ export function Page({ pagePath: currentPagePath, children }: Props) {
           content="A chat application with double role conversation feature."
         />
 
-        <meta name="twitter:card" content="summary" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://grape-chat.deno.dev/" />
         <meta property="og:site_name" content="Grape Chat" />
@@ -39,6 +38,14 @@ export function Page({ pagePath: currentPagePath, children }: Props) {
         />
         <meta
           property="og:description"
+          content="A chat application with double role conversation feature."
+        />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Grape Chat" />
+        <meta name="twitter:image" content="https://i.imgur.com/MIcbIGT.png" />
+        <meta
+          name="twitter:description"
           content="A chat application with double role conversation feature."
         />
 
