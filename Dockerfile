@@ -21,5 +21,5 @@ ADD . .
 #RUN deno cache main.ts
 #RUN deno cache main.ts --import-map=import_map.json
 
-CMD deno run --allow-net --allow-env --allow-read main.ts
+CMD deno run --allow-net --allow-env --allow-read --allow-write main.ts
 # CMD deno run -A main.ts
