@@ -1,12 +1,15 @@
 export const colors = {
-  textLight: "#fff",
-  textDark: "#444",
+  white: "#fff",
+  liteBlack: "#444",
   headerBackground: "#78f",
   footerBackground: "#555",
   messageBalloonEdge: "#8af",
   messageBalloonFill: "#fff",
   chatInputTextAreaEdge: "#79b",
   uiAreaSplitter: "#88f",
+  controlHighlight: "#0af",
+  swapButtonFace: "#fa8",
+  sendButtonFace: "#5af",
 };
 
 export const pageMaxWidth = "700px";

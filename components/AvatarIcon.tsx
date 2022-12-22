@@ -20,10 +20,11 @@ export function AvatarIcon(
     css`
       height: ${avatarSizes.XS};
       border-radius: 50%;
+      border: solid 1px #4688;
 
       &.--can-select{
         cursor: pointer;
-        border: solid 2px transparent;
+        border: solid 2px #ccc;
         transition: all 0.3s;
         &:hover {
           border-color: #0ae8;
@@ -32,7 +33,7 @@ export function AvatarIcon(
 
       &.--selected{
         border: solid 2px #0ae;
-        box-shadow: 0 0 6px #0ae; 
+        box-shadow: 0 0 8px #0ae; 
       }
 
       ${mqSmall} {

@@ -75,7 +75,10 @@ function MessageEditPart({
         onInput={reflectTextValue(setText)}
         onKeyUp={onKeyUp}
       />
-      <button onClick={sendText}>send</button>
+      <button onClick={sendText}>
+        <i class="ph-paper-plane-right-fill" />
+        send
+      </button>
     </div>,
     css`
       flex-grow: 1;
@@ -92,6 +95,12 @@ function MessageEditPart({
         border-radius: 8px;
         font-size: 16px;
         background: ${colors.messageBalloonFill};
+        color: ${colors.liteBlack};
+
+        &:focus{
+          border: solid 2px ${colors.controlHighlight};
+          outline: none;
+        }
       }
 
       > button {
@@ -101,7 +110,10 @@ function MessageEditPart({
         border: none;
         border-radius: 15px;
         font-size: 16px;
+        color: ${colors.white};
+        background: ${colors.sendButtonFace};
         ${commonButtonStyle};
+        gap: 2px;
       }
     `,
   );
@@ -157,8 +169,9 @@ function AvatarSelector({
         height: 25px;
         border: none;
         border-radius: 50%;
-        background: #fa8;
-        color: #fff;
+        background: ${colors.swapButtonFace};
+        color: ${colors.white};
+        font-size: 16px;
         ${commonButtonStyle};
       }
     `,

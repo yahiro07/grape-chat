@@ -20,7 +20,7 @@ export const globalStyle = css`
   }
 
   body {
-    color: ${colors.textDark};
+    color: ${colors.liteBlack};
     background: #eee;
     display: flex;
     justify-content: center;
@@ -37,9 +37,13 @@ export const globalStyle = css`
   }
 
   input, textarea, button{
+    background: #F0F;
+    color: #0F0;
+    border: solid 1px #F00;
+
     &:focus{
       border: none;
-      outline: solid 2px #0af;
+      outline: solid 2px ${colors.controlHighlight};
     }
   }
 

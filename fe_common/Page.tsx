@@ -97,7 +97,7 @@ function HeaderContent({ currentPagePath }: { currentPagePath: string }) {
     </div>,
     css`
       background: ${colors.headerBackground};
-      color: ${colors.textLight};
+      color: ${colors.white};
       display: flex;
       padding: 0 5px;
 
@@ -128,7 +128,7 @@ function FooterContent() {
     css`
       height: 30px;
       background: ${colors.footerBackground};
-      color: ${colors.textLight};
+      color: ${colors.white};
       display: flex;
       justify-content: center;
       align-items: center;
