@@ -184,7 +184,7 @@ function DocumentContent() {
       > .github{
         position: absolute;
         top: 15px;
-        right: 30px;
+        right: 20px;
         > a > img{
           height: 50px;
         }
@@ -192,10 +192,16 @@ function DocumentContent() {
 
       ${mqSmall}{
         padding: 20px 30px 30px;
+        > .github{
+          right: 30px;
+        }
       }
 
       ${mqMedium}{
         padding: 20px 40px 30px;
+        > .github{
+          right: 40px;
+        }
       }
     `,
   );
