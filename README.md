@@ -6,7 +6,7 @@ A chat application example built with Deno+Fresh+Resin CSS.
 
 ## Application
 
-https://grape-chat.miqsel.net
+https://grape-chat.deno.dev
 
 ## Screenshot
 
