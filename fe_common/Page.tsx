@@ -20,8 +20,28 @@ export function Page({ pagePath: currentPagePath, children }: Props) {
   return (
     <>
       <Head>
-        <title>{uiConstants.siteTitle}</title>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>{uiConstants.siteTitle}</title>
+
+        <meta
+          name="description"
+          content="A chat application with double role conversation feature."
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://grape-chat.deno.dev/" />
+        <meta property="og:site_name" content="Grape Chat" />
+        <meta property="og:title" content="Grape Chat" />
+        <meta
+          property="og:image"
+          content="https://i.gyazo.com/ea033aa38cc05a9ef9856e1237287b66.png"
+        />
+        <meta
+          property="og:description"
+          content="A chat application with double role conversation feature."
+        />
+        <meta name="twitter:card" content="summary" />
+
         <script src="https://unpkg.com/phosphor-icons" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
