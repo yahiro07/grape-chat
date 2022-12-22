@@ -43,7 +43,7 @@ function DocumentContent() {
       <h3>The UI</h3>
       <img
         class="image-ui"
-        src="https://i.gyazo.com/41f87a242006276aedab6ab4c9fc8598.png"
+        src="https://i.gyazo.com/2fad5e5a5d80e50907c08ddda2433dcb.png"
       />
       <p>
         There are two avatar selection parts on either side of the chat input
