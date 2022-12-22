@@ -65,7 +65,7 @@ function DocumentContent() {
       </p>
       <p class="banner-row">
         <a href="https://iconbu.com/" target="_blank">
-          <img src="https://i.gyazo.com/4a4e071bfafa5674e0bdaa0b67e59da7.png" />
+          <img src="https://i.gyazo.com/e05edd6a9dcd3baa8fd65084bc7ab0a9.png" />
         </a>
         (Japanese Site)
       </p>
@@ -152,10 +152,6 @@ function DocumentContent() {
         margin-top: 10px;
         display: flex;
         gap: 5px;
-
-        > a > img{
-          max-width: 50vw;
-        }
       }
 
       > .twitter{
