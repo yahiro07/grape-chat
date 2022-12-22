@@ -5,6 +5,7 @@ function createStorehouse() {
   const messages: ChatMessage[] = [];
 
   const logFilePath = ".data/chat-log.json";
+  const persistEnabled = Deno.env.get("ENABLE_CHAT_LOG_PERSISTENCE");
 
   async function saveMessagesToFile() {
     const text = JSON.stringify(messages, null, " ");
@@ -23,7 +24,9 @@ function createStorehouse() {
       //ignore errors
     }
   }
-  loadMessagesFromFile();
+  if (persistEnabled) {
+    loadMessagesFromFile();
+  }
 
   return {
     getMessages(): ChatMessage[] {
@@ -34,7 +37,9 @@ function createStorehouse() {
         messages.shift();
       }
       messages.push(message);
-      await saveMessagesToFile();
+      if (persistEnabled) {
+        await saveMessagesToFile();
+      }
     },
   };
 }
