@@ -34,7 +34,7 @@ export function Page({ pagePath: currentPagePath, children }: Props) {
         <meta property="og:title" content="Grape Chat" />
         <meta
           property="og:image"
-          content="https://i.gyazo.com/ea033aa38cc05a9ef9856e1237287b66.png"
+          content="https://i.gyazo.com/7d7fcb0710169563cc56799f22f6f455.png"
         />
         <meta
           property="og:description"
