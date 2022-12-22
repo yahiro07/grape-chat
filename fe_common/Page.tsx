@@ -29,7 +29,7 @@ export function Page({ pagePath: currentPagePath, children }: Props) {
         />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://grape-chat.deno.dev/" />
+        <meta property="og:url" content="https://grape-chat.miqsel.net/" />
         <meta property="og:site_name" content="Grape Chat" />
         <meta property="og:title" content="Grape Chat" />
         <meta
