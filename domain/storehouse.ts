@@ -1,18 +1,36 @@
 import { appConstants } from "./app_constants.ts";
+import {
+  createPersistenceAdapter_localStorage,
+  createPersistenceAdapter_none,
+  createPersistenceAdapter_redis,
+  PersistenceAdapter,
+} from "./persistence_adapters.ts";
 import { ChatMessage } from "./types.ts";
 
-function createStorehouse() {
+async function createPersistenceAdapter(): Promise<PersistenceAdapter> {
+  const storageKey = "grape-chat-messages";
+  const persistenceScheme = Deno.env.get("CHAT_LOG_PERSISTENCE_SCHEME") ??
+    "none";
+  const creator = {
+    "none": createPersistenceAdapter_none,
+    "local_storage": createPersistenceAdapter_localStorage,
+    "redis": createPersistenceAdapter_redis,
+  }[persistenceScheme] || createPersistenceAdapter_none;
+
+  return await creator(storageKey);
+}
+
+async function createStorehouse() {
   const messages: ChatMessage[] = [];
 
-  const persistEnabled = Deno.env.get("ENABLE_CHAT_LOG_PERSISTENCE");
-  const storageKey = "grape-chat-messages";
+  const persistenceAdapter = await createPersistenceAdapter();
 
-  function savePersistMessages() {
-    localStorage.setItem(storageKey, JSON.stringify(messages));
+  async function savePersistMessages() {
+    await persistenceAdapter.save(JSON.stringify(messages));
   }
 
-  function loadPersistMessages() {
-    const text = localStorage.getItem(storageKey);
+  async function loadPersistMessages() {
+    const text = await persistenceAdapter.load();
     if (text) {
       try {
         const _messages = JSON.parse(text);
@@ -26,24 +44,21 @@ function createStorehouse() {
       }
     }
   }
-  if (persistEnabled) {
-    loadPersistMessages();
-  }
+
+  loadPersistMessages();
 
   return {
     getMessages(): ChatMessage[] {
       return messages;
     },
-    addMessage(message: ChatMessage) {
+    async addMessage(message: ChatMessage) {
       if (messages.length >= appConstants.maxChatLogCount) {
         messages.shift();
       }
       messages.push(message);
-      if (persistEnabled) {
-        savePersistMessages();
-      }
+      await savePersistMessages();
     },
   };
 }
 
-export const storehouse = createStorehouse();
+export const storehouse = await createStorehouse();
