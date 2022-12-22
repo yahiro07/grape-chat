@@ -28,19 +28,19 @@ export function Page({ pagePath: currentPagePath, children }: Props) {
           content="A chat application with double role conversation feature."
         />
 
+        <meta name="twitter:card" content="summary" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://grape-chat.deno.dev/" />
         <meta property="og:site_name" content="Grape Chat" />
         <meta property="og:title" content="Grape Chat" />
         <meta
           property="og:image"
-          content="https://i.gyazo.com/7d7fcb0710169563cc56799f22f6f455.png"
+          content="https://i.imgur.com/MIcbIGT.png"
         />
         <meta
           property="og:description"
           content="A chat application with double role conversation feature."
         />
-        <meta name="twitter:card" content="summary" />
 
         <script src="https://unpkg.com/phosphor-icons" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
