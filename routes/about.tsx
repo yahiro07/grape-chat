@@ -30,10 +30,17 @@ function DocumentContent() {
         Mainly focusing on demonstrating how the UI constructed with Resin.
       </p>
 
-      <h3>Specifications</h3>
+      <h3>Features</h3>
       <p>
-        Unlike a typical chat UI, one can switch between two avatars to write a
-        conversation alone :)
+        Unlike a typical chat UI, you can switch between two avatars to make a
+        conversation by yourself :)
+      </p>
+      <p>
+        There are no login features for easiness. An avatar is selected from
+        preset characters.
+      </p>
+      <p>
+        A chat message is broadcasted to all users who is showing the app.
       </p>
       <p>
         Maximum 10 message logs are retained on the server. Any more than that
@@ -46,17 +53,17 @@ function DocumentContent() {
         src="https://i.gyazo.com/2fad5e5a5d80e50907c08ddda2433dcb.png"
       />
       <p>
-        There are two avatar selection parts on either side of the chat input
-        area. Clicking the icon selects the avatar to be used for speaking. The
+        There are two avatar selection parts on either side of the input text
+        field. Clicking the icon selects the avatar to be used for speaking. The
         selected icon is highlighted with a blue border. You can switch avatar
         characters respectively by pressing the small button under the name.
       </p>
 
       <h3>Credits</h3>
       <p>
-        The avatar charactor icons are adapted from FreePencil's website.
+        The avatar character icons are adapted from FreePencil's website.
       </p>
-      <p class="bannar-row">
+      <p class="banner-row">
         <a href="https://iconbu.com/" target="_blank">
           <img src="https://i.gyazo.com/4a4e071bfafa5674e0bdaa0b67e59da7.png" />
         </a>
@@ -141,7 +148,7 @@ function DocumentContent() {
         margin-bottom: 5px;
       }
 
-      > .bannar-row{
+      > .banner-row{
         margin-top: 10px;
         display: flex;
         gap: 5px;
