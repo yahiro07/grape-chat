@@ -10,7 +10,7 @@ import { ChatMessage } from "./types.ts";
 async function createPersistenceAdapter(): Promise<PersistenceAdapter> {
   const storageKey = "grape-chat-messages";
   const persistenceScheme = Deno.env.get("CHAT_LOG_PERSISTENCE_SCHEME") ??
-    "none";
+    "local_storage";
   const creator = {
     "none": createPersistenceAdapter_none,
     "local_storage": createPersistenceAdapter_localStorage,
