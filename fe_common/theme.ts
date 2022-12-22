@@ -10,6 +10,7 @@ export const colors = {
   controlHighlight: "#0af",
   swapButtonFace: "#fa8",
   sendButtonFace: "#5af",
+  sendButtonFaceInactive: "#BBB",
 };
 
 export const pageMaxWidth = "700px";

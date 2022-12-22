@@ -75,7 +75,7 @@ function MessageEditPart({
         onInput={reflectTextValue(setText)}
         onKeyUp={onKeyUp}
       />
-      <button onClick={sendText}>
+      <button onClick={sendText} disabled={!text}>
         <i class="ph-paper-plane-right-fill" />
         send
       </button>
@@ -114,6 +114,10 @@ function MessageEditPart({
         background: ${colors.sendButtonFace};
         ${commonButtonStyle};
         gap: 2px;
+
+        &:disabled{
+          background: ${colors.sendButtonFaceInactive};
+        }
       }
     `,
   );

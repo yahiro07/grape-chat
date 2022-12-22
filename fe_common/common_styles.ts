@@ -6,7 +6,7 @@ export const commonButtonStyle = css`
   align-items: center;
   cursor: pointer;
   transition: all 0.3s;
-  &:hover {
-    opacity: 0.7;
+  &:not(:disabled):hover {
+    opacity: 0.75;
   }
 `;
