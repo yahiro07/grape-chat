@@ -7,4 +7,5 @@
 import { start } from "$fresh/server.ts";
 import manifest from "./fresh.gen.ts";
 
-await start(manifest);
+const port = parseInt(Deno.env.get("PORT") ?? "3000");
+await start(manifest, { port });
