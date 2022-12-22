@@ -4,28 +4,30 @@ import { ChatMessage } from "./types.ts";
 function createStorehouse() {
   const messages: ChatMessage[] = [];
 
-  const logFilePath = ".data/chat-log.json";
   const persistEnabled = Deno.env.get("ENABLE_CHAT_LOG_PERSISTENCE");
+  const storageKey = "grape-chat-messages";
 
-  async function saveMessagesToFile() {
-    const text = JSON.stringify(messages, null, " ");
-    const folder = logFilePath.split("/")[0];
-    await Deno.mkdir(folder, { recursive: true });
-    await Deno.writeTextFile(logFilePath, text);
+  function saveMessages() {
+    localStorage.setItem(storageKey, JSON.stringify(messages));
   }
 
-  async function loadMessagesFromFile() {
-    try {
-      const text = await Deno.readTextFile(logFilePath);
-      const _messages = JSON.parse(text);
-      messages.length = 0;
-      messages.push(..._messages);
-    } catch (_) {
-      //ignore errors
+  function loadMessages() {
+    const text = localStorage.getItem(storageKey);
+    if (text) {
+      try {
+        const _messages = JSON.parse(text);
+        messages.length = 0;
+        messages.push(..._messages);
+      } catch (error) {
+        console.error(
+          "an error occurred while loading persist messages, load skipped",
+        );
+        console.error(error);
+      }
     }
   }
   if (persistEnabled) {
-    loadMessagesFromFile();
+    loadMessages();
   }
 
   return {
@@ -38,7 +40,7 @@ function createStorehouse() {
       }
       messages.push(message);
       if (persistEnabled) {
-        await saveMessagesToFile();
+        await saveMessages();
       }
     },
   };
