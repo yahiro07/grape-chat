@@ -10,7 +10,7 @@ https://grape-chat.miqsel.net
 
 ## Screenshot
 
-![screenshot](https://i.gyazo.com/de31498fd81585d4c9699f64bffb1687.png)
+![screenshot](https://i.gyazo.com/ac6f10a3305fbd2105721f31275a48e1.png)
 
 ## Debug
 
