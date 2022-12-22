@@ -8,9 +8,9 @@ export const colors = {
   chatInputTextAreaEdge: "#79b",
   uiAreaSplitter: "#88f",
   controlHighlight: "#0af",
-  swapButtonFace: "#fa8",
-  sendButtonFace: "#5af",
-  sendButtonFaceInactive: "#BBB",
+  swapButton: "#fa8",
+  sendButton: "#5af",
+  sendButtonInactive: "#BBB",
 };
 
 export const pageMaxWidth = "700px";

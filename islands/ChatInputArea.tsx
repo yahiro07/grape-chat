@@ -111,12 +111,17 @@ function MessageEditPart({
         border-radius: 15px;
         font-size: 16px;
         color: ${colors.white};
-        background: ${colors.sendButtonFace};
+        background: ${colors.sendButton};
         ${commonButtonStyle};
         gap: 2px;
 
         &:disabled{
-          background: ${colors.sendButtonFaceInactive};
+          background: ${colors.sendButtonInactive};
+        }
+        &:not(:disabled):hover {
+          background: ${colors.sendButton};
+          font-size: 17px;
+          opacity: 1;
         }
       }
     `,
@@ -173,7 +178,7 @@ function AvatarSelector({
         height: 25px;
         border: none;
         border-radius: 50%;
-        background: ${colors.swapButtonFace};
+        background: ${colors.swapButton};
         color: ${colors.white};
         font-size: 16px;
         ${commonButtonStyle};
