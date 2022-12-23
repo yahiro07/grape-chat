@@ -1,4 +1,5 @@
 import { css, solidify } from "../deps.ts";
+import { appConstants } from "../domain/app_constants.ts";
 import { Page } from "../fe_common/Page.tsx";
 import { mqMedium, mqSmall } from "../fe_common/theme.ts";
 import { uiConstants } from "../fe_common/ui_constants.ts";
@@ -43,8 +44,9 @@ function DocumentContent() {
         A chat message is broadcasted to all users who is showing the app.
       </p>
       <p>
-        Maximum 10 message logs are retained on the server. Any more than that
-        will be discarded.
+        Maximum {appConstants.maxChatLogCount}{" "}
+        message logs are retained on the server. Any more than that will be
+        discarded.
       </p>
 
       <h3>The UI</h3>

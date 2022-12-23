@@ -1,4 +1,4 @@
 export const appConstants = {
-  maxChatLogCount: 40,
+  maxChatLogCount: 20,
   maxMessageTextLength: 100,
 };
