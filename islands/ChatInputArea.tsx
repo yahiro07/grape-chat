@@ -1,5 +1,6 @@
 import { AvatarIcon } from "../components/AvatarIcon.tsx";
 import { css, cx, solidify, useEffect, useState } from "../deps.ts";
+import { appConstants } from "../domain/app_constants.ts";
 import { ChatUser, Side } from "../domain/types.ts";
 import { userProvider } from "../domain/user_provider.ts";
 import { apiBridge } from "../fe_common/api_bridge.ts";
@@ -85,6 +86,9 @@ function MessageEditPart({
 }) {
   const [text, setText] = useState("");
 
+  const textValid =
+    (1 <= text.length && text.length < appConstants.maxMessageTextLength);
+
   const sendText = () => {
     if (text.trim()) {
       apiBridge.sendChatMessage(user.userId, text, side);
@@ -105,7 +109,7 @@ function MessageEditPart({
         onInput={reflectTextValue(setText)}
         onKeyUp={onKeyUp}
       />
-      <button onClick={sendText} disabled={!text}>
+      <button onClick={sendText} disabled={!textValid}>
         <i class="ph-paper-plane-right-fill" />
         send
       </button>
