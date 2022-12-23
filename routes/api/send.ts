@@ -1,4 +1,4 @@
-import { HandlerContext } from "../../deps_backend.ts";
+import { HandlerContext } from "$fresh/server.ts";
 import { createRoomChannel } from "../../domain/room_channel.ts";
 import { storehouse } from "../../domain/storehouse.ts";
 import { ApiSendChatMessagePayload, ChatMessage } from "../../domain/types.ts";

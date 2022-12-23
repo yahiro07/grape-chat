@@ -1,4 +1,4 @@
-import { css, solidify } from "../deps.ts";
+import { css, solidify } from "resin/mod.ts";
 import { appConstants } from "../domain/app_constants.ts";
 import { Page } from "../fe_common/Page.tsx";
 import { mqMedium, mqSmall } from "../fe_common/theme.ts";

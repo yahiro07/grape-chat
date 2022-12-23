@@ -1,4 +1,4 @@
-import { css } from "../deps.ts";
+import { css } from "resin/mod.ts";
 
 export const commonButtonStyle = css`
   display: flex;

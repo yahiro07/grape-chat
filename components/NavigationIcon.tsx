@@ -1,4 +1,4 @@
-import { css, solidify } from "../deps.ts";
+import { css, solidify } from "resin/mod.ts";
 
 type Props = {
   iconSpec: string;
@@ -24,6 +24,6 @@ export function NavigationIcon({ iconSpec, pagePath, currentPagePath }: Props) {
           font-size: 36px;
         }
       }
-    `
+    `,
   );
 }

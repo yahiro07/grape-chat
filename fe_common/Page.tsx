@@ -4,7 +4,7 @@ import {
   ResinCssEmitter,
   ResinCssGlobalStyle,
   solidify,
-} from "../deps.ts";
+} from "resin/mod.ts";
 import { Head } from "$fresh/runtime.ts";
 import { globalStyle } from "./global_style.ts";
 import { NavigationIcon } from "../components/NavigationIcon.tsx";

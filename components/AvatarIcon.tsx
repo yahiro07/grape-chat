@@ -1,4 +1,4 @@
-import { css, cx, solidify } from "../deps.ts";
+import { css, cx, solidify } from "resin/mod.ts";
 import { avatarSizes, mqMedium, mqSmall } from "../fe_common/theme.ts";
 
 type Props = {

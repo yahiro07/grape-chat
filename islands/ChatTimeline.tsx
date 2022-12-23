@@ -1,4 +1,5 @@
-import { css, solidify, useEffect, useRef, useState } from "../deps.ts";
+import { css, solidify } from "resin/mod.ts";
+import { useEffect, useRef, useState } from "preact/hooks";
 import { apiBridge } from "../fe_common/api_bridge.ts";
 import { ChatMessage } from "../domain/types.ts";
 import { userProvider } from "../domain/user_provider.ts";

@@ -1,5 +1,5 @@
-import { Handler, HandlerContext, PageProps } from "../deps_backend.ts";
-import { css, solidify } from "../deps.ts";
+import { Handler, HandlerContext, PageProps } from "$fresh/server.ts";
+import { css, solidify } from "resin/mod.ts";
 import { storehouse } from "../domain/storehouse.ts";
 import { ChatMessage } from "../domain/types.ts";
 import { Page } from "../fe_common/Page.tsx";
