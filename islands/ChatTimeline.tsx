@@ -4,7 +4,7 @@ import { ChatMessage } from "../domain/types.ts";
 import { userProvider } from "../domain/user_provider.ts";
 import { appConstants } from "../domain/app_constants.ts";
 import { AvatarIcon } from "../components/AvatarIcon.tsx";
-import { colors } from "../fe_common/theme.ts";
+import { colors, mqMedium } from "../fe_common/theme.ts";
 
 export default function ChatTimeline({
   initialMessages,
@@ -46,6 +46,7 @@ export default function ChatTimeline({
       display: flex;
       flex-direction: column-reverse;
       overflow-y: auto;
+      padding: 10px 0;
     `,
   );
 }
@@ -66,9 +67,9 @@ function Message({ message }: { message: ChatMessage }) {
     </div>,
     css`
       flex-shrink: 0;
-      padding: 10px;
+      padding: 7px;
       display: flex;
-      gap: 10px;
+      gap: 6px;
       &.--side-right{
         flex-direction: row-reverse;
       }
@@ -79,6 +80,7 @@ function Message({ message }: { message: ChatMessage }) {
         &.--dummy{
           visibility: hidden;
         }
+        margin-bottom: -10px;
       }
       > .message-part {
         flex-grow: 1;
@@ -87,6 +89,14 @@ function Message({ message }: { message: ChatMessage }) {
         background: ${colors.messageBalloonFill};
         border-radius: 12px;
         white-space: pre-wrap;
+      }
+
+      ${mqMedium}{
+        padding: 8px 10px;
+        gap: 10px;
+        > .avatar-part{
+          margin-bottom: 0;
+        }
       }
     `,
   );

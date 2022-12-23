@@ -10,7 +10,7 @@ import {
   readLocalStorageObject,
   writeLocalStorageObject,
 } from "../fe_common/local_storage_helpers.ts";
-import { colors } from "../fe_common/theme.ts";
+import { colors, mqMedium } from "../fe_common/theme.ts";
 
 const allUsers = userProvider.getAllUsers();
 
@@ -70,7 +70,10 @@ export default function ChatInputArea() {
       border-top: solid 1px ${colors.uiAreaSplitter};
       padding: 10px;
       display: flex;
-      gap: 10px;
+      gap: 4px;
+      ${mqMedium}{
+        gap: 10px;
+      }
     `,
   );
 }
@@ -126,7 +129,7 @@ function MessageEditPart({
         resize: none;
         border: solid 1px ${colors.chatInputTextAreaEdge};
         padding: 10px;
-        border-radius: 8px;
+        border-radius: 12px;
         font-size: 16px;
         background: ${colors.messageBalloonFill};
         color: ${colors.liteBlack};
