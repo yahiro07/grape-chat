@@ -24,8 +24,10 @@ export default function ChatTimeline({
         newMessages.push(msg);
         return newMessages;
       });
-      const timelineDiv = refTimelineDiv.current;
-      timelineDiv.scrollTop = timelineDiv.scrollHeight;
+      setTimeout(() => {
+        const timelineDiv = refTimelineDiv.current;
+        timelineDiv.scrollTop = timelineDiv.scrollHeight;
+      }, 200);
     };
     return apiBridge.subscribeMessages((event) => {
       const { chatMessage } = event;
