@@ -88,13 +88,17 @@ function MessageEditPart({
   side: Side;
 }) {
   const [text, setText] = useState("");
+  const [sending, setSending] = useState(false);
 
   const textValid =
     (1 <= text.length && text.length < appConstants.maxMessageTextLength);
+  const canSend = textValid && !sending;
 
-  const sendText = () => {
+  const sendText = async () => {
     if (text.trim()) {
-      apiBridge.sendChatMessage(user.userId, text, side);
+      setSending(true);
+      await apiBridge.sendChatMessage(user.userId, text, side);
+      setSending(false);
       setText("");
     }
   };
@@ -112,7 +116,7 @@ function MessageEditPart({
         onInput={reflectTextValue(setText)}
         onKeyUp={onKeyUp}
       />
-      <button onClick={sendText} disabled={!textValid}>
+      <button onClick={sendText} disabled={!canSend}>
         <i class="ph-paper-plane-right-fill" />
         send
       </button>

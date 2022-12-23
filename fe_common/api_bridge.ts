@@ -15,7 +15,11 @@ export const apiBridge = {
     eventSource.addEventListener("message", listener);
     return () => eventSource.removeEventListener("message", listener);
   },
-  sendChatMessage(userId: string, text: string, side: Side) {
-    postJson<ApiSendChatMessagePayload>("/api/send", { userId, text, side });
+  async sendChatMessage(userId: string, text: string, side: Side) {
+    await postJson<ApiSendChatMessagePayload>("/api/send", {
+      userId,
+      text,
+      side,
+    });
   },
 };
