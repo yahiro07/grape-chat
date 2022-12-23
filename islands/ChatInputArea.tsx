@@ -90,20 +90,22 @@ function MessageEditPart({
   const [text, setText] = useState("");
   const [sending, setSending] = useState(false);
 
-  const textValid =
-    (1 <= text.length && text.length < appConstants.maxMessageTextLength);
+  const textTrimmed = text.trim();
+
+  const textValid = (1 <= textTrimmed.length &&
+    textTrimmed.length < appConstants.maxMessageTextLength);
   const canSend = textValid && !sending;
 
   const sendText = async () => {
-    if (text.trim()) {
+    if (textTrimmed) {
       setSending(true);
-      await apiBridge.sendChatMessage(user.userId, text, side);
+      await apiBridge.sendChatMessage(user.userId, textTrimmed, side);
       setSending(false);
       setText("");
     }
   };
 
-  const onKeyUp = (e: KeyboardEvent) => {
+  const handleKey = (e: KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       sendText();
     }
@@ -114,7 +116,7 @@ function MessageEditPart({
       <textarea
         value={text}
         onInput={reflectTextValue(setText)}
-        onKeyUp={onKeyUp}
+        onKeyDown={handleKey}
       />
       <button onClick={sendText} disabled={!canSend}>
         <i class="ph-paper-plane-right-fill" />
