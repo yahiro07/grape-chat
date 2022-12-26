@@ -60,6 +60,23 @@ export function Page({ pagePath: currentPagePath, children }: Props) {
           href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap"
           rel="stylesheet"
         />
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-QSV9C683B3"
+        >
+        </script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QSV9C683B3');
+`,
+          }}
+        >
+        </script>
         <ResinCssEmitter />
         <ResinCssGlobalStyle css={globalStyle} />
       </Head>
