@@ -3,10 +3,10 @@ export function createBroadcastChannelWrapper<T>(name: string) {
   return {
     subscribe(handler: (payload: T) => void) {
       const listener = (e: MessageEvent) => handler(e.data);
-      channel.addEventListener("message", listener);
+      channel.addEventListener('message', listener);
       return {
         unsubscribe() {
-          channel.removeEventListener("message", listener);
+          channel.removeEventListener('message', listener);
         },
       };
     },

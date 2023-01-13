@@ -1,4 +1,4 @@
-import { css, domStyled } from "resin/mod.ts";
+import { css, domStyled } from 'resin/mod.ts';
 
 type Props = {
   iconSpec: string;

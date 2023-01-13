@@ -1,20 +1,20 @@
-import { appConstants } from "./app_constants.ts";
+import { appConstants } from './app_constants.ts';
 import {
   createPersistenceAdapter_localStorage,
   createPersistenceAdapter_none,
   createPersistenceAdapter_redis,
   PersistenceAdapter,
-} from "./persistence_adapters.ts";
-import { ChatMessage } from "./types.ts";
+} from './persistence_adapters.ts';
+import { ChatMessage } from './types.ts';
 
 async function createPersistenceAdapter(): Promise<PersistenceAdapter> {
-  const storageKey = "grape-chat-messages";
-  const persistenceScheme = Deno.env.get("CHAT_LOG_PERSISTENCE_SCHEME") ??
-    "local_storage";
+  const storageKey = 'grape-chat-messages';
+  const persistenceScheme = Deno.env.get('CHAT_LOG_PERSISTENCE_SCHEME') ??
+    'local_storage';
   const creator = {
-    "none": createPersistenceAdapter_none,
-    "local_storage": createPersistenceAdapter_localStorage,
-    "redis": createPersistenceAdapter_redis,
+    'none': createPersistenceAdapter_none,
+    'local_storage': createPersistenceAdapter_localStorage,
+    'redis': createPersistenceAdapter_redis,
   }[persistenceScheme] || createPersistenceAdapter_none;
 
   return await creator(storageKey);
@@ -38,7 +38,7 @@ async function createStorehouse() {
         messages.push(..._messages);
       } catch (error) {
         console.error(
-          "an error occurred while loading persist messages, load skipped",
+          'an error occurred while loading persist messages, load skipped',
         );
         console.error(error);
       }

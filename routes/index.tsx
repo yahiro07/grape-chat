@@ -1,12 +1,12 @@
-import { Handler, HandlerContext, PageProps } from "$fresh/server.ts";
-import { css, domStyled } from "resin/mod.ts";
-import { storehouse } from "../domain/storehouse.ts";
-import { ChatMessage } from "../domain/types.ts";
-import { Page } from "../fe_common/Page.tsx";
-import ChatInputArea from "../islands/ChatInputArea.tsx";
-import ChatTimeline from "../islands/ChatTimeline.tsx";
-import { uiConstants } from "../fe_common/ui_constants.ts";
-import { mqMedium, mqSmall } from "../fe_common/theme.ts";
+import { Handler, HandlerContext, PageProps } from '$fresh/server.ts';
+import { css, domStyled } from 'resin/mod.ts';
+import { storehouse } from '../domain/storehouse.ts';
+import { ChatMessage } from '../domain/types.ts';
+import { Page } from '../fe_common/Page.tsx';
+import ChatInputArea from '../islands/ChatInputArea.tsx';
+import ChatTimeline from '../islands/ChatTimeline.tsx';
+import { uiConstants } from '../fe_common/ui_constants.ts';
+import { mqMedium, mqSmall } from '../fe_common/theme.ts';
 
 interface Data {
   messages: ChatMessage[];
@@ -22,7 +22,7 @@ export const handler: Handler<Data> = (
 
 export default function IndexPage({ data }: PageProps<Data>) {
   return (
-    <Page pagePath="/">
+    <Page pagePath='/'>
       <IndexPageContent messages={data.messages} />
     </Page>
   );
@@ -31,9 +31,9 @@ export default function IndexPage({ data }: PageProps<Data>) {
 function IndexPageContent({ messages }: { messages: ChatMessage[] }) {
   return domStyled(
     <main>
-      <div class="bg-layer">
+      <div class='bg-layer'>
       </div>
-      <div class="content-layer">
+      <div class='content-layer'>
         <ChatTimeline initialMessages={messages} />
         <ChatInputArea />
       </div>

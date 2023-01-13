@@ -1,15 +1,15 @@
-import { ComponentChildren } from "preact";
+import { ComponentChildren } from 'preact';
 import {
   css,
   domStyled,
   ResinCssEmitter,
   ResinCssGlobalStyle,
-} from "resin/mod.ts";
-import { Head } from "$fresh/runtime.ts";
-import { globalStyle } from "./global_style.ts";
-import { NavigationIcon } from "../components/NavigationIcon.tsx";
-import { colors, pageMaxWidth } from "./theme.ts";
-import { uiConstants } from "./ui_constants.ts";
+} from 'resin/mod.ts';
+import { Head } from '$fresh/runtime.ts';
+import { globalStyle } from './global_style.ts';
+import { NavigationIcon } from '../components/NavigationIcon.tsx';
+import { colors, pageMaxWidth } from './theme.ts';
+import { uiConstants } from './ui_constants.ts';
 
 interface Props {
   pagePath: string;
@@ -20,50 +20,50 @@ export function Page({ pagePath: currentPagePath, children }: Props) {
   return (
     <>
       <Head>
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name='viewport' content='width=device-width,initial-scale=1' />
         <title>{uiConstants.siteTitle}</title>
 
         <meta
-          name="description"
-          content="A chat application with double role conversation feature."
+          name='description'
+          content='A chat application with double role conversation feature.'
         />
 
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://grape-chat.miqsel.net/" />
-        <meta property="og:site_name" content="Grape Chat" />
-        <meta property="og:title" content="Grape Chat" />
+        <meta property='og:type' content='website' />
+        <meta property='og:url' content='https://grape-chat.miqsel.net/' />
+        <meta property='og:site_name' content='Grape Chat' />
+        <meta property='og:title' content='Grape Chat' />
         <meta
-          property="og:image"
-          content="https://i.imgur.com/MIcbIGT.png"
+          property='og:image'
+          content='https://i.imgur.com/MIcbIGT.png'
         />
         <meta
-          property="og:description"
-          content="A chat application with double role conversation feature."
-        />
-
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Grape Chat" />
-        <meta name="twitter:image" content="https://i.imgur.com/MIcbIGT.png" />
-        <meta
-          name="twitter:description"
-          content="A chat application with double role conversation feature."
+          property='og:description'
+          content='A chat application with double role conversation feature.'
         />
 
-        <script src="https://unpkg.com/phosphor-icons" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <meta name='twitter:card' content='summary' />
+        <meta name='twitter:title' content='Grape Chat' />
+        <meta name='twitter:image' content='https://i.imgur.com/MIcbIGT.png' />
+        <meta
+          name='twitter:description'
+          content='A chat application with double role conversation feature.'
+        />
+
+        <script src='https://unpkg.com/phosphor-icons' />
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
+          rel='preconnect'
+          href='https://fonts.gstatic.com'
+          crossOrigin='true'
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap"
-          rel="stylesheet"
+          href='https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap'
+          rel='stylesheet'
         />
 
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-QSV9C683B3"
+          src='https://www.googletagmanager.com/gtag/js?id=G-QSV9C683B3'
         >
         </script>
         <script
@@ -128,13 +128,13 @@ function HeaderContent({ currentPagePath }: { currentPagePath: string }) {
       </h1>
       <nav>
         <NavigationIcon
-          iconSpec="ph-chats"
-          pagePath="/"
+          iconSpec='ph-chats'
+          pagePath='/'
           currentPagePath={currentPagePath}
         />
         <NavigationIcon
-          iconSpec="ph-info"
-          pagePath="/about"
+          iconSpec='ph-info'
+          pagePath='/about'
           currentPagePath={currentPagePath}
         />
       </nav>

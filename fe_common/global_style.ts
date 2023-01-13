@@ -1,5 +1,5 @@
-import { colors } from "./theme.ts";
-import { css } from "resin/mod.ts";
+import { colors } from './theme.ts';
+import { css } from 'resin/mod.ts';
 
 export const globalStyle = css`
   * {

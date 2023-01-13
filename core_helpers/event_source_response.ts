@@ -11,6 +11,6 @@ export function eventSourceResponse(callbacks: {
     },
   });
   return new Response(stream.pipeThrough(new TextEncoderStream()), {
-    headers: { "content-type": "text/event-stream" },
+    headers: { 'content-type': 'text/event-stream' },
   });
 }

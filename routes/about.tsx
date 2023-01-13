@@ -1,12 +1,12 @@
-import { css, domStyled } from "resin/mod.ts";
-import { appConstants } from "../domain/app_constants.ts";
-import { Page } from "../fe_common/Page.tsx";
-import { mqMedium, mqSmall } from "../fe_common/theme.ts";
-import { uiConstants } from "../fe_common/ui_constants.ts";
+import { css, domStyled } from 'resin/mod.ts';
+import { appConstants } from '../domain/app_constants.ts';
+import { Page } from '../fe_common/Page.tsx';
+import { mqMedium, mqSmall } from '../fe_common/theme.ts';
+import { uiConstants } from '../fe_common/ui_constants.ts';
 
 export default function AboutPage() {
   return (
-    <Page pagePath="/about">
+    <Page pagePath='/about'>
       {domStyled(
         <div>
           <DocumentContent />
@@ -44,15 +44,15 @@ function DocumentContent() {
         A chat message is broadcasted to all users who is showing the app.
       </p>
       <p>
-        Maximum {appConstants.maxChatLogCount}{" "}
+        Maximum {appConstants.maxChatLogCount}{' '}
         message logs are retained on the server. Any more than that will be
         discarded.
       </p>
 
       <h3>The UI</h3>
       <img
-        class="image-ui"
-        src="https://i.gyazo.com/2fad5e5a5d80e50907c08ddda2433dcb.png"
+        class='image-ui'
+        src='https://i.gyazo.com/2fad5e5a5d80e50907c08ddda2433dcb.png'
       />
       <p>
         There are two avatar selection parts on either side of the input text
@@ -65,9 +65,9 @@ function DocumentContent() {
       <p>
         The avatar character icons are adapted from FreePencil's website.
       </p>
-      <p class="banner-row">
-        <a href="https://iconbu.com/" target="_blank">
-          <img src="https://i.gyazo.com/e05edd6a9dcd3baa8fd65084bc7ab0a9.png" />
+      <p class='banner-row'>
+        <a href='https://iconbu.com/' target='_blank'>
+          <img src='https://i.gyazo.com/e05edd6a9dcd3baa8fd65084bc7ab0a9.png' />
         </a>
         (Japanese Site)
       </p>
@@ -78,25 +78,25 @@ function DocumentContent() {
         below.
       </p>
 
-      <p class="twitter">
+      <p class='twitter'>
         Twitter
         <a
-          href="https://twitter.com/yahiro120"
-          target="_blank"
-          rel="noreferrer"
+          href='https://twitter.com/yahiro120'
+          target='_blank'
+          rel='noreferrer'
         >
-          <img src="https://i.imgur.com/eeoh1bP.png" />
+          <img src='https://i.imgur.com/eeoh1bP.png' />
           @yahiro120
         </a>
       </p>
-      <p class="mail">
+      <p class='mail'>
         mail: yahiro1200
-        <img src="https://i.gyazo.com/e54845878425c702a37b27c14c3587e2.png" />
+        <img src='https://i.gyazo.com/e54845878425c702a37b27c14c3587e2.png' />
       </p>
 
-      <div class="github">
-        <a href="https://github.com/yahiro07/grape_chat" target="_blank">
-          <img src="https://i.imgur.com/I9addWI.png" />
+      <div class='github'>
+        <a href='https://github.com/yahiro07/grape_chat' target='_blank'>
+          <img src='https://i.imgur.com/I9addWI.png' />
         </a>
       </div>
     </div>,

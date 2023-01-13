@@ -1,11 +1,11 @@
-import { css, domStyled } from "resin/mod.ts";
-import { useEffect, useRef, useState } from "preact/hooks";
-import { apiBridge } from "../fe_common/api_bridge.ts";
-import { ChatMessage } from "../domain/types.ts";
-import { userProvider } from "../domain/user_provider.ts";
-import { appConstants } from "../domain/app_constants.ts";
-import { AvatarIcon } from "../components/AvatarIcon.tsx";
-import { colors, mqMedium } from "../fe_common/theme.ts";
+import { css, domStyled } from 'resin/mod.ts';
+import { useEffect, useRef, useState } from 'preact/hooks';
+import { apiBridge } from '../fe_common/api_bridge.ts';
+import { ChatMessage } from '../domain/types.ts';
+import { userProvider } from '../domain/user_provider.ts';
+import { appConstants } from '../domain/app_constants.ts';
+import { AvatarIcon } from '../components/AvatarIcon.tsx';
+import { colors, mqMedium } from '../fe_common/theme.ts';
 
 export default function ChatTimeline({
   initialMessages,
@@ -40,7 +40,7 @@ export default function ChatTimeline({
 
   const messagesReverseOrder = messages.slice().reverse();
   return domStyled(
-    <div class="fc-chat-timeline" ref={refTimelineDiv}>
+    <div class='fc-chat-timeline' ref={refTimelineDiv}>
       {messagesReverseOrder.map((message) => (
         <Message key={message.id} message={message} />
       ))}
@@ -58,12 +58,12 @@ function Message({ message }: { message: ChatMessage }) {
   const user = userProvider.getUserById(message.userId);
   return domStyled(
     <div class={`--side-${message.side}`}>
-      <div class="avatar-part">
+      <div class='avatar-part'>
         <AvatarIcon imageUrl={user.avatarUrl} />
         <div>{user.name}</div>
       </div>
-      <div class="message-part">{message.text}</div>
-      <div class="avatar-part --dummy">
+      <div class='message-part'>{message.text}</div>
+      <div class='avatar-part --dummy'>
         {/* placeholder */}
         <AvatarIcon imageUrl={user.avatarUrl} />
       </div>

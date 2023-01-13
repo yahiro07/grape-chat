@@ -1,5 +1,5 @@
-import { css, cx, domStyled } from "resin/mod.ts";
-import { avatarSizes, mqMedium, mqSmall } from "../fe_common/theme.ts";
+import { css, cx, domStyled } from 'resin/mod.ts';
+import { avatarSizes, mqMedium, mqSmall } from '../fe_common/theme.ts';
 
 type Props = {
   imageUrl: string;
@@ -13,7 +13,7 @@ export function AvatarIcon(
 ) {
   return domStyled(
     <img
-      class={cx(canSelect && "--can-select", selected && "--selected")}
+      class={cx(canSelect && '--can-select', selected && '--selected')}
       src={imageUrl}
       onClick={onClick}
     />,

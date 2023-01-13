@@ -1,6 +1,6 @@
-import { Handlers } from "$fresh/server.ts";
-import { createRoomChannel } from "../../domain/room_channel.ts";
-import { eventSourceResponse } from "../../core_helpers/event_source_response.ts";
+import { Handlers } from '$fresh/server.ts';
+import { createRoomChannel } from '../../domain/room_channel.ts';
+import { eventSourceResponse } from '../../core_helpers/event_source_response.ts';
 
 export const handler: Handlers = {
   GET(_req, _ctx) {

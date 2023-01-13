@@ -1,10 +1,10 @@
-import { HandlerContext } from "$fresh/server.ts";
-import { createRoomChannel } from "../../domain/room_channel.ts";
-import { storehouse } from "../../domain/storehouse.ts";
-import { ApiSendChatMessagePayload, ChatMessage } from "../../domain/types.ts";
-import { generateRandomId } from "../../core_helpers/domain_related_helpers.ts";
-import { userProvider } from "../../domain/user_provider.ts";
-import { appConstants } from "../../domain/app_constants.ts";
+import { HandlerContext } from '$fresh/server.ts';
+import { createRoomChannel } from '../../domain/room_channel.ts';
+import { storehouse } from '../../domain/storehouse.ts';
+import { ApiSendChatMessagePayload, ChatMessage } from '../../domain/types.ts';
+import { generateRandomId } from '../../core_helpers/domain_related_helpers.ts';
+import { userProvider } from '../../domain/user_provider.ts';
+import { appConstants } from '../../domain/app_constants.ts';
 
 const allUsers = userProvider.getAllUsers();
 
@@ -16,9 +16,9 @@ export async function handler(
     (await req.json()) as ApiSendChatMessagePayload;
 
   const valid = userId && allUsers.some((user) => user.userId === userId) &&
-    text && typeof (text) === "string" &&
+    text && typeof (text) === 'string' &&
     (1 <= text.length && text.length < appConstants.maxMessageTextLength) &&
-    (side == "left" || side === "right");
+    (side == 'left' || side === 'right');
 
   if (valid) {
     const id = generateRandomId(8);
@@ -27,8 +27,8 @@ export async function handler(
     const roomChannel = createRoomChannel();
     roomChannel.postMessage({ chatMessage });
     roomChannel.close();
-    return new Response("ok");
+    return new Response('ok');
   } else {
-    return new Response("ng");
+    return new Response('ng');
   }
 }

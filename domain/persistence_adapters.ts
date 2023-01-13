@@ -1,5 +1,5 @@
 // deno-lint-ignore-file require-await
-import { connect, parseURL } from "redis/mod.ts";
+import { connect, parseURL } from 'redis/mod.ts';
 
 export type PersistenceAdapter = {
   load(): Promise<string | null>;
@@ -22,8 +22,8 @@ export async function createPersistenceAdapter_localStorage(
 export async function createPersistenceAdapter_redis(
   key: string,
 ): Promise<PersistenceAdapter> {
-  const redisUrl = Deno.env.get("REDIS_URL");
-  const connectOptionDefault = { hostname: "127.0.0.1", port: 6379 };
+  const redisUrl = Deno.env.get('REDIS_URL');
+  const connectOptionDefault = { hostname: '127.0.0.1', port: 6379 };
   const connectOptions = redisUrl ? parseURL(redisUrl) : connectOptionDefault;
   const redis = await connect(connectOptions);
 

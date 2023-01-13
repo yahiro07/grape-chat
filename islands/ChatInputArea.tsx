@@ -1,17 +1,17 @@
-import { AvatarIcon } from "../components/AvatarIcon.tsx";
-import { css, cx, domStyled } from "resin/mod.ts";
-import { useEffect, useState } from "preact/hooks";
-import { appConstants } from "../domain/app_constants.ts";
-import { ChatUser, Side } from "../domain/types.ts";
-import { userProvider } from "../domain/user_provider.ts";
-import { apiBridge } from "../fe_common/api_bridge.ts";
-import { commonButtonStyle } from "../fe_common/common_styles.ts";
-import { reflectTextValue } from "../fe_common/form_helpers.ts";
+import { AvatarIcon } from '../components/AvatarIcon.tsx';
+import { css, cx, domStyled } from 'resin/mod.ts';
+import { useEffect, useState } from 'preact/hooks';
+import { appConstants } from '../domain/app_constants.ts';
+import { ChatUser, Side } from '../domain/types.ts';
+import { userProvider } from '../domain/user_provider.ts';
+import { apiBridge } from '../fe_common/api_bridge.ts';
+import { commonButtonStyle } from '../fe_common/common_styles.ts';
+import { reflectTextValue } from '../fe_common/form_helpers.ts';
 import {
   readLocalStorageObject,
   writeLocalStorageObject,
-} from "../fe_common/local_storage_helpers.ts";
-import { colors, mqMedium } from "../fe_common/theme.ts";
+} from '../fe_common/local_storage_helpers.ts';
+import { colors, mqMedium } from '../fe_common/theme.ts';
 
 const allUsers = userProvider.getAllUsers();
 
@@ -25,7 +25,7 @@ const localStorageKey = `grape_chat_avatar_selection_state`;
 export default function ChatInputArea() {
   const [userIndexA, setUserIndexA] = useState(0);
   const [userIndexB, setUserIndexB] = useState(1);
-  const [activeSide, setActiveSide] = useState<Side>("left");
+  const [activeSide, setActiveSide] = useState<Side>('left');
 
   useEffect(() => {
     const data = readLocalStorageObject<AvatarSelectionPersistData>(
@@ -34,7 +34,7 @@ export default function ChatInputArea() {
     if (data) {
       setUserIndexA(data.userIndexA ?? 0);
       setUserIndexB(data.userIndexB ?? 1);
-      setActiveSide(data.activeSide ?? "left");
+      setActiveSide(data.activeSide ?? 'left');
     }
   }, []);
 
@@ -46,25 +46,25 @@ export default function ChatInputArea() {
     });
   }, [userIndexA, userIndexB, activeSide]);
 
-  const userIndex = activeSide === "left" ? userIndexA : userIndexB;
+  const userIndex = activeSide === 'left' ? userIndexA : userIndexB;
   return domStyled(
-    <div class="fc-chat-input-area">
+    <div class='fc-chat-input-area'>
       <AvatarSelector
-        className="avatar-part-left"
-        side="left"
+        className='avatar-part-left'
+        side='left'
         userIndex={userIndexA}
         setUserIndex={setUserIndexA}
-        active={activeSide === "left"}
-        setActive={() => setActiveSide("left")}
+        active={activeSide === 'left'}
+        setActive={() => setActiveSide('left')}
       />
       <MessageEditPart user={allUsers[userIndex]} side={activeSide} />
       <AvatarSelector
-        className="avatar-part-right"
-        side="right"
+        className='avatar-part-right'
+        side='right'
         userIndex={userIndexB}
         setUserIndex={setUserIndexB}
-        active={activeSide === "right"}
-        setActive={() => setActiveSide("right")}
+        active={activeSide === 'right'}
+        setActive={() => setActiveSide('right')}
       />
     </div>,
     css`
@@ -88,7 +88,7 @@ function MessageEditPart({
   user: ChatUser;
   side: Side;
 }) {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
   const [sending, setSending] = useState(false);
 
   const textTrimmed = text.trim();
@@ -102,12 +102,12 @@ function MessageEditPart({
       setSending(true);
       await apiBridge.sendChatMessage(user.userId, textTrimmed, side);
       setSending(false);
-      setText("");
+      setText('');
     }
   };
 
   const handleKey = (e: KeyboardEvent) => {
-    if (e.key === "Enter" && !e.shiftKey) {
+    if (e.key === 'Enter' && !e.shiftKey) {
       sendText();
     }
   };
@@ -120,7 +120,7 @@ function MessageEditPart({
         onKeyDown={handleKey}
       />
       <button onClick={sendText} disabled={!canSend}>
-        <i class="ph-paper-plane-right-fill" />
+        <i class='ph-paper-plane-right-fill' />
         send
       </button>
     </div>,
@@ -205,8 +205,8 @@ function AvatarSelector({
         selected={active}
       />
       <div>{user.name}</div>
-      <button class="btn-swap" onClick={() => shiftUser(1)}>
-        <i class="ph-arrows-clockwise" />
+      <button class='btn-swap' onClick={() => shiftUser(1)}>
+        <i class='ph-arrows-clockwise' />
       </button>
     </div>,
     css`

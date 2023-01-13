@@ -1,4 +1,4 @@
-export type Side = "left" | "right";
+export type Side = 'left' | 'right';
 
 export type ChatUser = {
   userId: string;
