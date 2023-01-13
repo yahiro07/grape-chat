@@ -1,5 +1,5 @@
 import { Handler, HandlerContext, PageProps } from "$fresh/server.ts";
-import { css, solidify } from "resin/mod.ts";
+import { css, domStyled } from "resin/mod.ts";
 import { storehouse } from "../domain/storehouse.ts";
 import { ChatMessage } from "../domain/types.ts";
 import { Page } from "../fe_common/Page.tsx";
@@ -29,7 +29,7 @@ export default function IndexPage({ data }: PageProps<Data>) {
 }
 
 function IndexPageContent({ messages }: { messages: ChatMessage[] }) {
-  return solidify(
+  return domStyled(
     <main>
       <div class="bg-layer">
       </div>

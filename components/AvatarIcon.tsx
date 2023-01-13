@@ -1,4 +1,4 @@
-import { css, cx, solidify } from "resin/mod.ts";
+import { css, cx, domStyled } from "resin/mod.ts";
 import { avatarSizes, mqMedium, mqSmall } from "../fe_common/theme.ts";
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
 export function AvatarIcon(
   { imageUrl, canSelect, selected, onClick }: Props,
 ) {
-  return solidify(
+  return domStyled(
     <img
       class={cx(canSelect && "--can-select", selected && "--selected")}
       src={imageUrl}

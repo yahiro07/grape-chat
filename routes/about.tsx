@@ -1,4 +1,4 @@
-import { css, solidify } from "resin/mod.ts";
+import { css, domStyled } from "resin/mod.ts";
 import { appConstants } from "../domain/app_constants.ts";
 import { Page } from "../fe_common/Page.tsx";
 import { mqMedium, mqSmall } from "../fe_common/theme.ts";
@@ -7,7 +7,7 @@ import { uiConstants } from "../fe_common/ui_constants.ts";
 export default function AboutPage() {
   return (
     <Page pagePath="/about">
-      {solidify(
+      {domStyled(
         <div>
           <DocumentContent />
         </div>,
@@ -20,7 +20,7 @@ export default function AboutPage() {
 }
 
 function DocumentContent() {
-  return solidify(
+  return domStyled(
     <div>
       <h1>{uiConstants.siteTitle}</h1>
       <h3>Overview</h3>

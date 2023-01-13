@@ -1,5 +1,5 @@
 import { AvatarIcon } from "../components/AvatarIcon.tsx";
-import { css, cx, solidify } from "resin/mod.ts";
+import { css, cx, domStyled } from "resin/mod.ts";
 import { useEffect, useState } from "preact/hooks";
 import { appConstants } from "../domain/app_constants.ts";
 import { ChatUser, Side } from "../domain/types.ts";
@@ -47,7 +47,7 @@ export default function ChatInputArea() {
   }, [userIndexA, userIndexB, activeSide]);
 
   const userIndex = activeSide === "left" ? userIndexA : userIndexB;
-  return solidify(
+  return domStyled(
     <div class="fc-chat-input-area">
       <AvatarSelector
         className="avatar-part-left"
@@ -112,7 +112,7 @@ function MessageEditPart({
     }
   };
 
-  return solidify(
+  return domStyled(
     <div class={className}>
       <textarea
         value={text}
@@ -194,7 +194,7 @@ function AvatarSelector({
     setUserIndex(newIndex);
   };
 
-  return solidify(
+  return domStyled(
     <div
       class={cx(className)}
     >

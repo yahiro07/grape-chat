@@ -1,4 +1,4 @@
-import { css, solidify } from "resin/mod.ts";
+import { css, domStyled } from "resin/mod.ts";
 import { useEffect, useRef, useState } from "preact/hooks";
 import { apiBridge } from "../fe_common/api_bridge.ts";
 import { ChatMessage } from "../domain/types.ts";
@@ -39,7 +39,7 @@ export default function ChatTimeline({
   }, []);
 
   const messagesReverseOrder = messages.slice().reverse();
-  return solidify(
+  return domStyled(
     <div class="fc-chat-timeline" ref={refTimelineDiv}>
       {messagesReverseOrder.map((message) => (
         <Message key={message.id} message={message} />
@@ -56,7 +56,7 @@ export default function ChatTimeline({
 
 function Message({ message }: { message: ChatMessage }) {
   const user = userProvider.getUserById(message.userId);
-  return solidify(
+  return domStyled(
     <div class={`--side-${message.side}`}>
       <div class="avatar-part">
         <AvatarIcon imageUrl={user.avatarUrl} />

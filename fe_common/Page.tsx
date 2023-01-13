@@ -1,9 +1,9 @@
 import { ComponentChildren } from "preact";
 import {
   css,
+  domStyled,
   ResinCssEmitter,
   ResinCssGlobalStyle,
-  solidify,
 } from "resin/mod.ts";
 import { Head } from "$fresh/runtime.ts";
 import { globalStyle } from "./global_style.ts";
@@ -80,7 +80,7 @@ export function Page({ pagePath: currentPagePath, children }: Props) {
         <ResinCssEmitter />
         <ResinCssGlobalStyle css={globalStyle} />
       </Head>
-      {solidify(
+      {domStyled(
         <div>
           <header>
             <HeaderContent currentPagePath={currentPagePath} />
@@ -120,7 +120,7 @@ export function Page({ pagePath: currentPagePath, children }: Props) {
 }
 
 function HeaderContent({ currentPagePath }: { currentPagePath: string }) {
-  return solidify(
+  return domStyled(
     <div>
       <h1>
         <img src={uiConstants.siteTitleLogoUrl} />
@@ -167,7 +167,7 @@ function HeaderContent({ currentPagePath }: { currentPagePath: string }) {
 }
 
 function FooterContent() {
-  return solidify(
+  return domStyled(
     <div>copyright ©2022 yahiro, all rights reserved.</div>,
     css`
       height: 30px;

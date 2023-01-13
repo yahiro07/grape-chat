@@ -1,4 +1,4 @@
-import { css, solidify } from "resin/mod.ts";
+import { css, domStyled } from "resin/mod.ts";
 
 type Props = {
   iconSpec: string;
@@ -8,7 +8,7 @@ type Props = {
 
 export function NavigationIcon({ iconSpec, pagePath, currentPagePath }: Props) {
   const isActive = pagePath === currentPagePath;
-  return solidify(
+  return domStyled(
     <a href={pagePath}>
       <i class={iconSpec} data-active={isActive} />
     </a>,
