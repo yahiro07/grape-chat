@@ -7,7 +7,7 @@ export type PersistenceAdapter = {
 };
 
 export async function createPersistenceAdapter_localStorage(
-  key: string,
+  key: string
 ): Promise<PersistenceAdapter> {
   return {
     async load() {
@@ -20,7 +20,7 @@ export async function createPersistenceAdapter_localStorage(
 }
 
 export async function createPersistenceAdapter_redis(
-  key: string,
+  key: string
 ): Promise<PersistenceAdapter> {
   const redisUrl = Deno.env.get("REDIS_URL");
   const connectOptionDefault = { hostname: "127.0.0.1", port: 6379 };
@@ -38,7 +38,7 @@ export async function createPersistenceAdapter_redis(
 }
 
 export async function createPersistenceAdapter_none(
-  _key: string,
+  _key: string
 ): Promise<PersistenceAdapter> {
   return {
     async load() {

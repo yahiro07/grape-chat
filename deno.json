@@ -15,7 +15,8 @@
     "@preact/signals": "https://esm.sh/*@preact/signals@1.2.1",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.0",
     "resin/": "https://deno.land/x/resin@v0.1.2/",
-    "redis/": "https://deno.land/x/redis@v0.32.0/"
+    "redis/": "https://deno.land/x/redis@v0.32.1/",
+    "$std/": "https://deno.land/std@0.208.0/"
   },
   "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
