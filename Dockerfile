@@ -20,8 +20,8 @@ USER deno
 ADD . .
 
 # Compile the main app so that it doesn't need to be compiled each startup/entry.
-#RUN deno cache main.ts
-RUN deno cache main.ts --import-map=import_map.json
+RUN deno cache main.ts
+# RUN deno cache main.ts --import-map=import_map.json
 
 # CMD deno run --unstable --allow-net --allow-env --allow-read --allow-write --allow-run main.ts
-CMD deno run -A main.ts
+CMD deno run -A --unstable main.ts
