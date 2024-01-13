@@ -9,6 +9,7 @@ ENV CHAT_LOG_PERSISTENCE_SCHEME redis
 
 WORKDIR /app 
 
+RUN chown -R deno:deno /app
 USER deno
 
 # Cache the dependencies as a layer (the following two steps are re-run only when deps.ts is modified).
