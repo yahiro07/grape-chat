@@ -1,3 +1,6 @@
 /.local/
 /.vscode/settings.json
 /.data/
+
+# Fresh build directory
+_fresh/
