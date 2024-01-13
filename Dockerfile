@@ -5,11 +5,12 @@ FROM denoland/deno:1.39.3
 ARG RAILWAY_GIT_COMMIT_SHA
 ENV DENO_DEPLOYMENT_ID=${RAILWAY_GIT_COMMIT_SHA}
 
-ENV CHAT_LOG_PERSISTENCE_SCHEME redis
+# ENV CHAT_LOG_PERSISTENCE_SCHEME redis
+# EXPOSE 8000
 
 WORKDIR /app 
 
-RUN chown -R deno:deno /app
+# RUN chown -R deno:deno /app
 USER deno
 
 # Cache the dependencies as a layer (the following two steps are re-run only when deps.ts is modified).
