@@ -24,12 +24,8 @@ function DocumentContent() {
     <div>
       <h1>{uiConstants.siteTitle}</h1>
       <h3>Overview</h3>
-      <p>
-        A chat application example built with Deno+Fresh+Resin CSS.
-      </p>
-      <p>
-        Mainly focusing on demonstrating how the UI constructed with Resin.
-      </p>
+      <p>A chat application example built with Deno+Fresh+Resin CSS.</p>
+      <p>Mainly focusing on demonstrating how the UI constructed with Resin.</p>
 
       <h3>Features</h3>
       <p>
@@ -40,9 +36,7 @@ function DocumentContent() {
         There are no login features for easiness. An avatar is selected from
         preset characters.
       </p>
-      <p>
-        A chat message is broadcasted to all users who is showing the app.
-      </p>
+      <p>A chat message is broadcasted to all users who is showing the app.</p>
       <p>
         Maximum {appConstants.maxChatLogCount}{" "}
         message logs are retained on the server. Any more than that will be
@@ -62,14 +56,11 @@ function DocumentContent() {
       </p>
 
       <h3>Credits</h3>
-      <p>
-        The avatar character icons are adapted from FreePencil's website.
-      </p>
+      <p>The avatar character icons are adapted from FreePencil's website.</p>
       <p class="banner-row">
         <a href="https://iconbu.com/" target="_blank">
-          <img src="https://i.gyazo.com/e05edd6a9dcd3baa8fd65084bc7ab0a9.png" />
+          Free Pencil (Japanese Site)
         </a>
-        (Japanese Site)
       </p>
 
       <h3>Contact</h3>
@@ -115,7 +106,7 @@ function DocumentContent() {
       > h1 {
         font-size: 40px;
         font-weight: bold;
-        color: #64A;
+        color: #64a;
       }
 
       > h3 {
@@ -130,13 +121,13 @@ function DocumentContent() {
         height: 36px;
         border-radius: 30px;
 
-        &::before{
-          content: '🍇';
+        &::before {
+          content: "🍇";
           margin-top: -4px;
         }
       }
 
-      > h1 + h3{
+      > h1 + h3 {
         margin-top: 20px;
       }
 
@@ -145,22 +136,22 @@ function DocumentContent() {
         margin-left: 5px;
       }
 
-      > .image-ui{
+      > .image-ui {
         max-width: 100%;
         margin-bottom: 5px;
       }
 
-      > .banner-row{
+      > .banner-row {
         margin-top: 10px;
         display: flex;
         gap: 5px;
       }
 
-      > .twitter{
+      > .twitter {
         margin-top: 10px;
         display: flex;
         gap: 10px;
-        > a{
+        > a {
           display: flex;
           gap: 10px;
           padding-right: 5px;
@@ -169,7 +160,7 @@ function DocumentContent() {
           border-radius: 4px;
           overflow: hidden;
           color: #444;
-          > img{
+          > img {
             height: 36px;
           }
         }
@@ -186,25 +177,25 @@ function DocumentContent() {
         margin-top: 10px;
       }
 
-      > .github{
+      > .github {
         position: absolute;
         top: 15px;
         right: 20px;
-        > a > img{
+        > a > img {
           height: 50px;
         }
       }
 
-      ${mqSmall}{
+      ${mqSmall} {
         padding: 20px 30px 30px;
-        > .github{
+        > .github {
           right: 30px;
         }
       }
 
-      ${mqMedium}{
+      ${mqMedium} {
         padding: 20px 40px 30px;
-        > .github{
+        > .github {
           right: 40px;
         }
       }
