@@ -11,10 +11,6 @@ There are no login function for easiness. An avatar is selected from preset char
 
 [https://grape-chat.miqsel.net/](https://grape-chat.miqsel.net/)
 
-## Screenshot
-
-![screenshot](https://i.imgur.com/H678e66.png)
-
 ## Environment
 
 Up to 10 messages are retained in memory of the server process.
